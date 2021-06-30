@@ -1,0 +1,16 @@
+.nav-header {
+  box-shadow: 0;
+}
+
+.nav-lists {
+  margin: 0;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+
+.app-logo {
+  height: 2rem;
+  /* width: 3rem; */
+}
