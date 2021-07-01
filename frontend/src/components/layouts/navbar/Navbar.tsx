@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import {
   IonMenu,
   IonHeader,
@@ -11,9 +11,8 @@ import {
   IonIcon,
   IonLabel,
   IonImg,
-  IonButton,
-  IonText,
 } from "@ionic/react";
+import { menuController } from "@ionic/core";
 import "./Navbar.css";
 
 import { arrowBack } from "ionicons/icons";
@@ -53,7 +52,7 @@ const Navbar = () => {
       id: 3,
       icon: bagIcon,
       title: "Operators",
-      link: "/dashboard",
+      link: "/operators",
     },
     {
       id: 4,
@@ -104,7 +103,8 @@ const Navbar = () => {
               key={link.id}
               color="primary"
               className="menu-link-btn"
-              routerLink="/dashboard"
+              routerLink={link.link}
+              onClick={async () => await menuController.toggle()}
             >
               <IonImg src={link.icon} />
               <IonLabel className="pl-1">{link.title}</IonLabel>

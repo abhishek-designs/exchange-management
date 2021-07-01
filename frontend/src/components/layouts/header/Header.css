@@ -26,6 +26,7 @@
 .header-contain .header-right .user-profile .admin-img {
   height: 2.5rem;
   width: 2.5rem;
+  margin-left: 1rem;
 }
 
 .header-contain .header-right .user-profile .user-desc {
@@ -43,17 +44,14 @@
   padding-top: 0.2rem;
 }
 
-.header-contain .header-right .nav-item {
-  /* margin-left: 5rem; */
-}
-
 .header-contain .header-right .settings-btn {
   position: relative;
 }
 
 .app-logo {
   height: 6rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  margin-left: 2rem;
 }
 
 .nav-logo {

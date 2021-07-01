@@ -3,8 +3,8 @@ import { IonApp, IonRouterOutlet, IonPage } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 // Pages
-import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Operators from "./pages/operators/Operators";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -36,8 +36,8 @@ const App: React.FC = () => {
         <Navbar />
         <IonPage id="main-content">
           <IonRouterOutlet>
-            <Route exact path="/home" component={Home} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/operators" component={Operators} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>
