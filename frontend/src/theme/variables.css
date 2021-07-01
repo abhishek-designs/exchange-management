@@ -89,6 +89,10 @@ ion-card {
   background-color: transparent;
   margin: 0;
 }
+/* 
+ion-header::after {
+  --background-image: none;
+} */
 
 .ion-color-secondary {
   position: absolute;

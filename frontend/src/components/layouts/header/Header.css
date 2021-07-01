@@ -1,3 +1,7 @@
+.main-header {
+  box-shadow: none;
+}
+
 .header-contain {
   display: flex;
   align-items: center;

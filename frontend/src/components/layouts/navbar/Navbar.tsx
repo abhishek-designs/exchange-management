@@ -88,7 +88,7 @@ const Navbar = () => {
 
   return (
     <IonMenu side="start" contentId="main-content" type="overlay">
-      <IonHeader>
+      <IonHeader class="ion-no-border">
         <IonToolbar color="primary">
           <IonMenuButton slot="start" color="primary">
             <IonIcon icon={arrowBack} color="light" />

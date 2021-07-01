@@ -22,7 +22,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <IonHeader>
+    <IonHeader class="ion-no-border">
       <IonToolbar color="primary">
         <IonToolbar className="container" color="primary">
           <IonMenuButton slot="start" color="tertiary" />

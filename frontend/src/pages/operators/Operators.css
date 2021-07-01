@@ -1,0 +1,20 @@
+.operators-contain {
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 1.5rem;
+}
+
+.operators-contain .custom-card {
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* width: 10rem; */
+}
+
+.operators-contain .custom-card .operator-logo {
+  height: 6rem;
+}
