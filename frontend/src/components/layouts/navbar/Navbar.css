@@ -1,0 +1,9 @@
+ion-item.menu-link-btn {
+  cursor: pointer;
+  --background-hover: red;
+  --border-color: red;
+}
+
+/* .menu-link-btn:hover {
+  --background: red;
+} */

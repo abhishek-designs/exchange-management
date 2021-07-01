@@ -15,7 +15,12 @@
   /* width: 3rem; */
 }
 
-.ion-card {
-  --box-shadow: none;
-  background-color: transparent;
+.custom-card {
+  background-color: var(--ion-color-light);
+  padding: 0.6rem;
+}
+
+.container {
+  max-width: 97%;
+  margin: 0 auto;
 }

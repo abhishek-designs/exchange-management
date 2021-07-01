@@ -78,7 +78,7 @@ http://ionicframework.com/docs/theming/ */
   /* Custom */
   --ion-color-primary-light: #cce0cc;
   --ion-color-danger-light: #ffcccc;
-  --ion-color-warning-light: #ffc980;
+  --ion-color-warning-light: #ffe9cc;
 
   --ion-background-color: #f9f9f9;
   --ion-font-family: "Roboto", sans-serif;
@@ -87,6 +87,7 @@ http://ionicframework.com/docs/theming/ */
 ion-card {
   box-shadow: none;
   background-color: transparent;
+  margin: 0;
 }
 
 .ion-color-secondary {

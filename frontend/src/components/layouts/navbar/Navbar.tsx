@@ -11,6 +11,8 @@ import {
   IonIcon,
   IonLabel,
   IonImg,
+  IonButton,
+  IonText,
 } from "@ionic/react";
 import "./Navbar.css";
 
@@ -29,6 +31,7 @@ interface Navlink {
   id: number;
   icon: string;
   title: string;
+  link: string;
 }
 
 const Navbar = () => {
@@ -38,41 +41,49 @@ const Navbar = () => {
       id: 1,
       icon: dashboardIcon,
       title: "Dashboard",
+      link: "/dashboard",
     },
     {
       id: 2,
       icon: bellIcon,
       title: "Notifications",
+      link: "/dashboard",
     },
     {
       id: 3,
       icon: bagIcon,
       title: "Operators",
+      link: "/dashboard",
     },
     {
       id: 4,
       icon: approvedMenu,
       title: "Approvals",
+      link: "/dashboard",
     },
     {
       id: 5,
       icon: taskComplete,
       title: "Tasks",
+      link: "/dashboard",
     },
     {
       id: 6,
       icon: inventory,
       title: "Inventory",
+      link: "/dashboard",
     },
     {
       id: 7,
       icon: exchange,
       title: "Exchange Platform",
+      link: "/dashboard",
     },
     {
       id: 8,
       icon: disposal,
       title: "Disposal",
+      link: "/dashboard",
     },
   ]);
 
@@ -89,7 +100,12 @@ const Navbar = () => {
       <IonContent color="primary">
         <IonList lines="none" class="ion-no-padding">
           {navlinks.map(link => (
-            <IonItem key={link.id} color="primary">
+            <IonItem
+              key={link.id}
+              color="primary"
+              className="menu-link-btn"
+              routerLink="/dashboard"
+            >
               <IonImg src={link.icon} />
               <IonLabel className="pl-1">{link.title}</IonLabel>
             </IonItem>

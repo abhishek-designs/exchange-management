@@ -32,16 +32,16 @@ import "./theme/variables.css";
 const App: React.FC = () => {
   return (
     <IonApp>
-      <Navbar />
-      <IonPage id="main-content">
-        <IonReactRouter>
+      <IonReactRouter>
+        <Navbar />
+        <IonPage id="main-content">
           <IonRouterOutlet>
             <Route exact path="/home" component={Home} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/" render={() => <Redirect to="/home" />} />
+            <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
-        </IonReactRouter>
-      </IonPage>
+        </IonPage>
+      </IonReactRouter>
     </IonApp>
   );
 };

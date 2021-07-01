@@ -1,0 +1,146 @@
+.dashboard-contain {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* .dashboard-contain::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+} */
+
+.dashboard-contain .main-dashboard {
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 1.5rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card {
+  padding: 1rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card .status-icon {
+  height: 2rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card .status-icon path {
+  fill: var(--ion-color-primary);
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-label {
+  color: var(--ion-color-primary);
+  padding-left: 0.6rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-section .card-slot {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-section .card-slot .num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-section .total-slot {
+  background-color: var(--ion-color-medium);
+}
+.dashboard-contain .main-dashboard .custom-card .card-section .pending-slot {
+  background-color: var(--ion-color-warning-light);
+}
+.dashboard-contain .main-dashboard .custom-card .card-section .active-slot {
+  background-color: var(--ion-color-primary-light);
+}
+
+.dashboard-contain .main-dashboard .custom-card .card-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+.dashboard-contain
+  .main-dashboard
+  .custom-card
+  .card-section
+  .card-slot:nth-child(1) {
+  grid-row: span 2;
+  height: 100%;
+}
+
+.dashboard-contain .main-dashboard .custom-card:last-child {
+  grid-column: span 2;
+  height: 100%;
+}
+
+.dashboard-contain
+  .main-dashboard
+  .custom-card:last-child
+  .card-section
+  .card-slot:nth-child(1) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.dashboard-contain .main-dashboard .custom-card:last-child .card-section {
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+}
+
+/* .dashboard-contain
+  .main-dashboard
+  .custom-card:last-child
+  .card-section
+  .card-slot {
+  height: 100%;
+  grid-row: span 1;
+  grid-column: span 2;
+} */
+
+.bg-layout {
+  position: absolute;
+  z-index: 1;
+  height: 20rem;
+}
+
+.bg-layout:nth-child(1) {
+  top: 0;
+  right: 0;
+}
+
+.bg-layout:nth-child(2) {
+  bottom: 4rem;
+  left: 0;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  z-index: 2;
+  margin: 0;
+  background: rgba(229, 229, 229, 0.9);
+  border-radius: 0;
+  padding: 1.5rem 0;
+  overflow: auto;
+  padding-bottom: 5rem;
+}
