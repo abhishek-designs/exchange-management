@@ -1,0 +1,72 @@
+.header-contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  height: 10vh;
+}
+
+.header-contain .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-contain .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.header-contain .header-right .user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.header-contain .header-right .user-profile .admin-img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.header-contain .header-right .user-profile .user-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-contain .header-right .user-profile .user-desc .admin-mail {
+  font-weight: lighter;
+}
+
+.header-contain .header-right .user-profile .user-desc .admin-designation {
+  font-weight: 400;
+  padding-top: 0.2rem;
+}
+
+.header-contain .header-right .nav-item {
+  /* margin-left: 5rem; */
+}
+
+.header-contain .header-right .settings-btn {
+  position: relative;
+}
+
+.app-logo {
+  height: 6rem;
+  margin-right: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-logo .logo-txt {
+  font-size: 0.7rem;
+}
+
+.comp-logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}

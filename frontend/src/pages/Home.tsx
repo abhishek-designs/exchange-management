@@ -9,19 +9,13 @@ import {
   IonGrid,
   IonRow,
 } from "@ionic/react";
-import Navbar from "../components/layouts/navbar/Navbar";
-import ExploreContainer from "../components/ExploreContainer";
+import Header from "../components/layouts/header/Header";
 import "./Home.css";
 
 const Home: React.FC = () => {
   return (
     <>
-      <IonHeader>
-        <IonToolbar color="primary">
-          {/* <StyledLogo /> */}
-          <IonMenuButton slot="start" color="tertiary" />
-        </IonToolbar>
-      </IonHeader>
+      <Header />
       <IonContent className="ion-padding" slot="fixed">
         <IonGrid slot="fixed">
           <IonRow>{/* <Main /> */}</IonRow>

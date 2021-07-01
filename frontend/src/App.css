@@ -14,3 +14,8 @@
   height: 2rem;
   /* width: 3rem; */
 }
+
+.ion-card {
+  --box-shadow: none;
+  background-color: transparent;
+}
