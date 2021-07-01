@@ -76,7 +76,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-tint: #ffffff;
 
   /* Custom */
-  --ion-color-primary-light: #cce0cc;
+  --ion-color-primary-light: #e5f0e5;
   --ion-color-danger-light: #ffcccc;
   --ion-color-warning-light: #ffe9cc;
 
@@ -89,10 +89,6 @@ ion-card {
   background-color: transparent;
   margin: 0;
 }
-/* 
-ion-header::after {
-  --background-image: none;
-} */
 
 .ion-color-secondary {
   position: absolute;

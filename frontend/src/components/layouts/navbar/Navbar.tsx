@@ -46,7 +46,7 @@ const Navbar = () => {
       id: 2,
       icon: bellIcon,
       title: "Notifications",
-      link: "/dashboard",
+      link: "/notifications",
     },
     {
       id: 3,

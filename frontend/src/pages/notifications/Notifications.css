@@ -1,0 +1,87 @@
+.notifications-contain .container {
+  padding: 1.5rem 0;
+}
+
+.notifications-contain .notification-header .notification-stats,
+.notifications-contain .notification-header .notification-timeline {
+  background-color: var(--ion-color-primary-light);
+  padding: 1rem;
+}
+
+.notifications-contain .notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.notifications-contain .notification-header .notification-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.notifications-contain .notification-header .notification-stats .notif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications-contain .notification-header .notification-stats .divider {
+  height: 3rem;
+  width: 2px;
+  background-color: var(--ion-color-primary);
+}
+
+.notifications-contain
+  .notification-header
+  .notification-stats
+  .notif
+  .notif-num {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.calender-logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+.notifications-contain .notification-header .notification-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.notifications-contain
+  .notification-header
+  .notification-timeline
+  .timeline-label {
+  display: flex;
+  align-items: center;
+}
+
+.notifications-contain
+  .notification-header
+  .notification-timeline
+  .timeline-main {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.notifications-contain
+  .notification-header
+  .notification-timeline
+  .timeline-main
+  .dash {
+  height: 2px;
+  background-color: var(--ion-color-primary);
+  width: 2rem;
+  border-radius: none;
+}
