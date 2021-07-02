@@ -61,12 +61,13 @@ const Header = () => {
                 <IonImg src={bellIcon} alt="bell icon" />
                 <IonBadge color="secondary">9+</IonBadge>
               </IonButton>
-              <IonButton
+              <IonMenuButton menu="settings" />
+              {/* <IonButton
                 fill="clear"
                 className="header-btn settings-btn nav-item"
               >
                 <IonImg src={cogIcon} alt="cog icon" />
-              </IonButton>
+              </IonButton> */}
             </IonCard>
           </IonCard>
         </IonToolbar>

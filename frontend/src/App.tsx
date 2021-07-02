@@ -9,6 +9,7 @@ import Notifications from "./pages/notifications/Notifications";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
+import Settings from "./components/layouts/settings/Settings";
 
 /* Core CSS required for Ionic components to work properly */
 import "./App.css";
@@ -35,6 +36,7 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <Navbar />
+        <Settings />
         <IonPage id="main-content">
           <IonRouterOutlet>
             <Route exact path="/dashboard" component={Dashboard} />
