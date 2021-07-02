@@ -58,7 +58,7 @@ const Navbar = () => {
       id: 4,
       icon: approvedMenu,
       title: "Approvals",
-      link: "/dashboard",
+      link: "/approvals",
     },
     {
       id: 5,

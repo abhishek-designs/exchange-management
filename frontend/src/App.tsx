@@ -6,6 +6,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Operators from "./pages/operators/Operators";
 import Notifications from "./pages/notifications/Notifications";
+import Approvals from "./pages/approvals/Approvals";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -42,6 +43,7 @@ const App: React.FC = () => {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/operators" component={Operators} />
             <Route exact path="/notifications" component={Notifications} />
+            <Route exact path="/approvals" component={Approvals} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

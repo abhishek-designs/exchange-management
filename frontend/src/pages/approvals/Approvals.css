@@ -1,0 +1,79 @@
+.page-contain .container {
+  padding: 1.5rem 0;
+}
+
+.page-contain .main-header .main-stats,
+.page-contain .main-header .timeline {
+  background-color: var(--ion-color-primary-light);
+  padding: 1rem;
+}
+
+.page-contain .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.page-contain .main-header .main-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  padding: 1rem 1.5rem;
+}
+
+.page-contain .main-header .main-stats .num-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-contain .main-header .main-stats .divider {
+  height: 3rem;
+  width: 1.6px;
+  background-color: var(--ion-color-primary);
+}
+
+.page-contain .main-header .main-stats .num-stat .new-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.calender-logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+.page-contain .main-header .timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.page-contain .main-header .timeline .timeline-label {
+  display: flex;
+  align-items: center;
+}
+
+.page-contain .main-header .main-stats .num-stat .stat-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.page-contain .main-header .timeline .timeline-main {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.page-contain .main-header .timeline .timeline-main .dash {
+  height: 2px;
+  background-color: var(--ion-color-primary);
+  width: 2rem;
+  border-radius: none;
+}
