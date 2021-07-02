@@ -79,6 +79,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-primary-light: #e5f0e5;
   --ion-color-danger-light: #ffcccc;
   --ion-color-warning-light: #ffe9cc;
+  --ion-color-primary-alt: #338533;
 
   --ion-background-color: #f9f9f9;
   --ion-font-family: "Roboto", sans-serif;
@@ -108,6 +109,9 @@ ion-card {
 }
 .ion-color-warning-light {
   --ion-color-base: var(--ion-color-warning-light);
+}
+.ion-color-primary-alt {
+  --ion-color-base: var(--ion-color-primary-alt);
 }
 
 @media (prefers-color-scheme: dark) {

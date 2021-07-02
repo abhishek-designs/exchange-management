@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   IonMenu,
   IonHeader,
@@ -13,11 +13,48 @@ import {
 } from "@ionic/react";
 import { menuController } from "@ionic/core";
 
-import appLogo from "../../../assets/icons/app-logo.svg";
-import { arrowBack } from "ionicons/icons";
-import inventoryIcon from "../../../assets/icons/inventory.svg";
+import { arrowForward } from "ionicons/icons";
+import usersIcon from "../../../assets/icons/users.svg";
+import itemsIcon from "../../../assets/icons/items.svg";
+import configIcon from "../../../assets/icons/config.svg";
+import bagIcon from "../../../assets/icons/bag.svg";
+
+interface Setting {
+  id: number;
+  icon: string;
+  title: string;
+  link: string;
+}
 
 const Settings = () => {
+  // State for nav links
+  const [settings] = useState<Setting[]>([
+    {
+      id: 1,
+      icon: usersIcon,
+      title: "User Management",
+      link: "/dashboard",
+    },
+    {
+      id: 2,
+      icon: itemsIcon,
+      title: "Items",
+      link: "/notifications",
+    },
+    {
+      id: 3,
+      icon: configIcon,
+      title: "Configurations",
+      link: "/operators",
+    },
+    {
+      id: 4,
+      icon: bagIcon,
+      title: "Operators",
+      link: "/dashboard",
+    },
+  ]);
+
   useEffect(() => {
     menuController.enable(true, "settings");
   }, []);
@@ -31,18 +68,23 @@ const Settings = () => {
     >
       <IonHeader class="ion-no-border">
         <IonToolbar color="primary">
-          <IonMenuButton slot="start" color="primary" menu="settings">
-            <IonIcon icon={arrowBack} color="light" />
+          <IonMenuButton slot="end" color="primary" menu="settings">
+            <IonIcon icon={arrowForward} color="light" />
           </IonMenuButton>
-          <IonImg src={appLogo} className="app-logo" />
         </IonToolbar>
       </IonHeader>
       <IonContent color="primary">
         <IonList lines="none" class="ion-no-padding">
-          {[1, 2, 3, 4].map(num => (
-            <IonItem key={num} color="primary" className="menu-link-btn">
-              <IonImg src={inventoryIcon} />
-              <IonLabel className="pl-1">Title</IonLabel>
+          {settings.map(setting => (
+            <IonItem
+              key={setting.id}
+              color="primary"
+              className="menu-link-btn"
+              routerLink={setting.link}
+              onClick={async () => await menuController.close()}
+            >
+              <IonImg src={setting.icon} alt={setting.title} />
+              <IonLabel className="pl-1">{setting.title}</IonLabel>
             </IonItem>
           ))}
         </IonList>

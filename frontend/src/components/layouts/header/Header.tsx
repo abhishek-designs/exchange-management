@@ -39,6 +39,9 @@ const Header = () => {
                   NAPIMS
                 </IonText>
               </IonCard>
+              <IonCard color="primary-light" className="page-status">
+                <IonText color="light">Dashboard</IonText>
+              </IonCard>
             </IonCard>
             <IonCard className="header-right">
               <IonCard className="user-profile nav-item">
@@ -61,13 +64,9 @@ const Header = () => {
                 <IonImg src={bellIcon} alt="bell icon" />
                 <IonBadge color="secondary">9+</IonBadge>
               </IonButton>
-              <IonMenuButton menu="settings" />
-              {/* <IonButton
-                fill="clear"
-                className="header-btn settings-btn nav-item"
-              >
-                <IonImg src={cogIcon} alt="cog icon" />
-              </IonButton> */}
+              <IonMenuButton menu="settings">
+                <IonImg src={cogIcon} />
+              </IonMenuButton>
             </IonCard>
           </IonCard>
         </IonToolbar>
