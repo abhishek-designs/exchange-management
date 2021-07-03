@@ -7,6 +7,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Operators from "./pages/operators/Operators";
 import Notifications from "./pages/notifications/Notifications";
 import Approvals from "./pages/approvals/Approvals";
+import Tasks from "./pages/tasks/Tasks";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -44,6 +45,7 @@ const App: React.FC = () => {
             <Route exact path="/operators" component={Operators} />
             <Route exact path="/notifications" component={Notifications} />
             <Route exact path="/approvals" component={Approvals} />
+            <Route exact path="/tasks" component={Tasks} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

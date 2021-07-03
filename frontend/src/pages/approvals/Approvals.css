@@ -63,14 +63,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 30%; */
-  margin-right: 2rem;
+  width: 100%;
+  margin-right: 1rem;
 }
 
 .page-contain .main-header .request-btn {
   --box-shadow: none;
   text-transform: capitalize;
   font-weight: 300;
+  /* margin-left: */
 }
 
 .page-contain .main-header .request-btn .btn-caption {
@@ -99,7 +100,7 @@
 .page-contain .main-header .timeline .timeline-main {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 53%;
   justify-content: space-between;
 }
 

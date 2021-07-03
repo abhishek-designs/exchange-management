@@ -64,7 +64,7 @@ const Navbar = () => {
       id: 5,
       icon: taskComplete,
       title: "Tasks",
-      link: "/dashboard",
+      link: "/tasks",
     },
     {
       id: 6,

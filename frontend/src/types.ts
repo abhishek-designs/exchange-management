@@ -31,6 +31,20 @@ export interface Approval {
   isApproved: boolean;
 }
 
+export interface Task {
+  id: number;
+  task: {
+    msg: string;
+    msgFor: string;
+  };
+  taskNo: string;
+  initDate: string;
+  description: string;
+  status: string;
+  isCompleted: boolean;
+  assigner: string;
+}
+
 export interface TableHead {
   id: number;
   title: string;
