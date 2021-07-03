@@ -70,7 +70,7 @@ const Navbar = () => {
       id: 6,
       icon: inventory,
       title: "Inventory",
-      link: "/dashboard",
+      link: "/inventory",
     },
     {
       id: 7,
