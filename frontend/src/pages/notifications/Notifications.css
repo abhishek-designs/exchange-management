@@ -127,7 +127,7 @@
   color: var(--ion-color-primary);
 }
 
-/* .main-table .table-header .header-row {
+.main-table .table-header .header-row {
   display: grid;
   grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr;
   align-items: center;
@@ -221,4 +221,4 @@
 
 .notif-date {
   padding-bottom: 0.4rem;
-} */
+}

@@ -1,3 +1,8 @@
+.page-contain .page-section {
+  background-color: var(--ion-color-light);
+  margin-top: 1.5rem;
+}
+
 .page-contain .container {
   padding: 1.5rem 0;
 }
@@ -13,6 +18,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.page-contain .main-header .header-right {
+  /* width: 50%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .page-contain .main-header .main-stats {
@@ -51,7 +63,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 30%;
+  /* width: 30%; */
+  margin-right: 2rem;
+}
+
+.page-contain .main-header .request-btn {
+  --box-shadow: none;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.page-contain .main-header .request-btn .btn-caption {
+  padding-right: 1rem;
+}
+
+.page-contain .main-header .request-btn .request-badge {
+  border-radius: 50%;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-contain .main-header .timeline .timeline-label {
@@ -76,4 +108,29 @@
   background-color: var(--ion-color-primary);
   width: 2rem;
   border-radius: none;
+}
+
+.page-contain .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.page-contain .section-header .select-contain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 1rem;
+  width: 50%;
+}
+
+.approval-table .table-data .row-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.approval-table .table-data .row-1 .approve-msg {
+  font-weight: 700;
+  padding-bottom: 0.6rem;
 }
