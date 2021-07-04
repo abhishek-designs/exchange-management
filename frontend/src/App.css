@@ -24,3 +24,16 @@
   max-width: 97%;
   margin: 0 auto;
 }
+
+.primary-light {
+  background-color: var(--ion-color-primary-light);
+}
+.medium {
+  background-color: var(--ion-color-medium);
+}
+.danger-light {
+  background-color: var(--ion-color-danger-light);
+}
+.warning-light {
+  background-color: var(--ion-color-warning-light);
+}

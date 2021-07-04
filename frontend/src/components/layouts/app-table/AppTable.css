@@ -4,7 +4,7 @@
 
 .main-table .table-header .header-row {
   display: grid;
-  grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr;
+  grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 1fr;
   align-items: center;
   grid-gap: 1rem;
   border: 2px solid transparent;

@@ -76,13 +76,13 @@ const Navbar = () => {
       id: 7,
       icon: exchange,
       title: "Exchange Platform",
-      link: "/dashboard",
+      link: "/tasks",
     },
     {
       id: 8,
       icon: disposal,
       title: "Disposal",
-      link: "/dashboard",
+      link: "/inventory",
     },
   ]);
 

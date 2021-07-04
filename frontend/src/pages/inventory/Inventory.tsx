@@ -10,6 +10,7 @@ import {
   IonSelect,
   IonSelectOption,
   IonSearchbar,
+  IonCheckbox,
 } from "@ionic/react";
 import Header from "../../components/layouts/header/Header";
 import AppTable from "../../components/layouts/app-table/AppTable";
@@ -21,7 +22,7 @@ import importData from "../../assets/icons/import-data.svg";
 import exportData from "../../assets/icons/export-data.svg";
 import { arrowForward, chevronBack, chevronForward } from "ionicons/icons";
 
-import { TableHead, Approval } from "../../types";
+import { TableHead, Approval, Inventory } from "../../types";
 
 import "./Inventory.css";
 
@@ -32,61 +33,112 @@ const Approvals = () => {
   const [approveHeader] = useState<TableHead[]>([
     {
       id: 1,
-      title: "Approval",
-      isSortable: false,
+      title: "Name & Type",
+      isSortable: true,
     },
     {
       id: 2,
-      title: "Applicant",
-      isSortable: false,
+      title: "Operator",
+      isSortable: true,
     },
     {
       id: 3,
-      title: "Initiation date",
+      title: "IV/PSC",
       isSortable: true,
     },
     {
       id: 4,
-      title: "Reason/Remark",
-      isSortable: false,
+      title: "Stock Loc.",
+      isSortable: true,
     },
     {
       id: 5,
-      title: "Approval Status",
+      title: "Cost($)",
+      isSortable: true,
+    },
+    {
+      id: 6,
+      title: "Cost(₦)",
+      isSortable: true,
+    },
+    {
+      id: 7,
+      title: "Quantity",
+      isSortable: true,
+    },
+    {
+      id: 8,
+      title: "Status",
       isSortable: false,
     },
   ]);
   // State for table data
-  const [approvals] = useState<Approval[]>([
+  const [approvals] = useState<Inventory[]>([
     {
       id: 1,
-      approval: {
-        msg: "Item Status Update",
-        msgFor: "Surplus",
+      nameType: {
+        itemId: "SN/8893UB7",
+        name: "TCI Tricone drill bits",
+        type: "Spare Part",
       },
-      applicant: {
-        title: "TOTAL",
-        img: totalIcon,
-      },
-      initDate: "12/02/2020",
-      remark: "Too many of this item not in use but in stock.",
-      status: "Unattended",
-      isApproved: false,
-    },
-    {
-      id: 2,
-      approval: {
-        msg: "Item Status Update",
-        msgFor: "Disposal",
-      },
-      applicant: {
+      operator: {
         title: "Shell",
         img: shellIcon,
       },
-      initDate: "12/03/2017",
-      remark: "The Item marked for disposal is no longer in use.",
-      status: "Approved",
-      isApproved: true,
+      ivPsc: "ABC-XYZ",
+      stock: "Lagos",
+      costDollar: 5390,
+      costNigerian: 2390000,
+      quantity: 20,
+      status: {
+        acitve: 10,
+        inactive: 10,
+      },
+      checked: false,
+    },
+    {
+      id: 2,
+      nameType: {
+        itemId: "SN/8893UB7",
+        name: "TCI Tricone drill bits",
+        type: "Spare Part",
+      },
+      operator: {
+        title: "Shell",
+        img: shellIcon,
+      },
+      ivPsc: "ABC-XYZ",
+      stock: "Lagos",
+      costDollar: 5390,
+      costNigerian: 2390000,
+      quantity: 20,
+      status: {
+        acitve: 10,
+        inactive: 10,
+      },
+      checked: false,
+    },
+    {
+      id: 3,
+      nameType: {
+        itemId: "SN/8893UB7",
+        name: "TCI Tricone drill bits",
+        type: "Spare Part",
+      },
+      operator: {
+        title: "Shell",
+        img: shellIcon,
+      },
+      ivPsc: "ABC-XYZ",
+      stock: "Lagos",
+      costDollar: 5390,
+      costNigerian: 2390000,
+      quantity: 20,
+      status: {
+        acitve: 10,
+        inactive: 10,
+      },
+      checked: false,
     },
   ]);
 
@@ -205,6 +257,9 @@ const Approvals = () => {
                 <IonCard className="table-header">
                   {/* Header row */}
                   <IonCard className="header-row">
+                    <IonCard className={`row row-0`}>
+                      <IonCheckbox />
+                    </IonCard>
                     {/* Notification */}
                     {approveHeader.map(row => (
                       <IonCard key={row.id} className={`row row-${row.id}`}>
@@ -227,47 +282,63 @@ const Approvals = () => {
                       key={data.id}
                       className={`data-row data-row-${data.id}`}
                     >
+                      <IonCard className="row row-0">
+                        <IonCheckbox checked={data.checked} />
+                      </IonCard>
                       {/* Notification */}
                       <IonCard className="row row-1">
                         <IonText color="primary" className="approve-msg">
-                          {data.approval.msg}
+                          {data.nameType.name}
                         </IonText>
-                        <IonText
-                          color="primary-alt"
-                          className="approve-msg-for"
-                        >
-                          {data.approval.msgFor}
+                        <IonText color="primary" className="approve-msg">
+                          {data.nameType.type}
+                        </IonText>
+                        <IonText color="primary" className="approve-msg">
+                          {data.nameType.itemId}
                         </IonText>
                       </IonCard>
                       {/* Origin */}
                       <IonCard className="row row-2">
-                        <IonText color="primary">
-                          {data.applicant.title}
-                        </IonText>
+                        <IonText color="primary">{data.operator.title}</IonText>
                         <IonImg
-                          src={data.applicant.img}
+                          src={data.operator.img}
                           alt="shell icon"
                           className="origin-img"
                         />
                       </IonCard>
-                      {/* Time */}
+                      {/* IV/PSC */}
                       <IonCard className="row row-3">
                         <IonText color="primary" className="notif-date">
-                          {data.initDate}
+                          {data.ivPsc}
                         </IonText>
                         {/* <IonText color="primary">{data.timestamp.time}</IonText> */}
                       </IonCard>
                       {/* Type */}
                       <IonCard className="row row-4">
-                        <IonText color="primary">{data.remark}</IonText>
+                        <IonText color="primary">{data.stock}</IonText>
+                      </IonCard>
+                      {/* Type */}
+                      <IonCard className="row row-4">
+                        <IonText color="primary">${data.costDollar}</IonText>
+                      </IonCard>
+                      {/* Type */}
+                      <IonCard className="row row-4">
+                        <IonText color="primary">₦{data.costNigerian}</IonText>
+                      </IonCard>
+                      {/* Type */}
+                      <IonCard className="row row-4">
+                        <IonText color="primary">{data.quantity} units</IonText>
                       </IonCard>
                       {/* Status */}
                       <IonCard className="row row-5">
-                        <IonText
-                          color={data.isApproved ? "primary" : "warning"}
-                        >
-                          {data.status}
-                        </IonText>
+                        <IonCard className="status-contain">
+                          <IonCard className="status-card active-status">
+                            <IonText color="primary">10 Active</IonText>
+                          </IonCard>
+                          <IonCard className="status-card inactive-status">
+                            <IonText color="danger">23 Inactive</IonText>
+                          </IonCard>
+                        </IonCard>
 
                         <IonButton fill="outline" color="primary">
                           <svg
