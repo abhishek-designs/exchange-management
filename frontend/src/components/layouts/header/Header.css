@@ -78,3 +78,43 @@
   height: 2.5rem;
   width: 2.5rem;
 }
+
+.notification-modal {
+  --width: 30%;
+}
+
+.notification-modal .notif-msg {
+  background-color: var(--ion-color-primary);
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  padding: 0.6rem 1rem;
+  overflow: auto;
+}
+
+.notification-modal .notif-msg .msg {
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.notification-modal .notif-msg .msg-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-modal .notif-msg .msg-bottom .close-msg-btn {
+  --background: #5c9d5c;
+}
+
+.notification-modal .see-all-btn {
+  margin-top: 2rem;
+  display: flex;
+  --background: #5c9d5c;
+  text-transform: capitalize;
+  align-self: center;
+  width: 100%;
+}
+ion-button {
+  --box-shadow: none;
+}

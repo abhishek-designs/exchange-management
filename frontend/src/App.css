@@ -37,3 +37,6 @@
 .warning-light {
   background-color: var(--ion-color-warning-light);
 }
+.primary-alt {
+  background-color: var(--ion-color-primary-alt);
+}

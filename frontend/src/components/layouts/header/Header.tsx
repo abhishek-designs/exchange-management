@@ -13,6 +13,7 @@ import {
   IonModal,
   CreateAnimation,
   Animation,
+  IonIcon,
 } from "@ionic/react";
 import { useLocation } from "react-router-dom";
 
@@ -21,7 +22,7 @@ import compLogo from "../../../assets/icons/napims-logo.png";
 import userAvatar from "../../../assets/img/user-avatar.png";
 import bellIcon from "../../../assets/icons/bell.svg";
 import cogIcon from "../../../assets/icons/cog.svg";
-
+import { close } from "ionicons/icons";
 import "./Header.css";
 
 const Header = () => {
@@ -83,7 +84,7 @@ const Header = () => {
                 <IonButton
                   fill="clear"
                   className="header-btn notification-btn nav-item"
-                  // onClick={() => setNotifModal(true)}
+                  onClick={() => setNotifModal(true)}
                 >
                   <IonImg src={bellIcon} alt="bell icon" />
                   <IonBadge color="secondary">9+</IonBadge>
@@ -101,8 +102,26 @@ const Header = () => {
         isOpen={notifModal}
         onDidDismiss={() => setNotifModal(false)}
         backdropDismiss
+        cssClass="notification-modal"
       >
-        <IonText>This is notifications</IonText>
+        <IonCard className="notif-msg">
+          {[1, 2, 3, 4, 5, 6, 7].map(num => (
+            <IonCard key={num} className="msg primary-alt">
+              <IonText color="light">
+                Item SN/559039 Approval Letter sent for approval with NAPIMS.
+              </IonText>
+              <IonCard className="msg-bottom">
+                <IonText color="light">05:06 PM 1st-Jan-2021</IonText>
+                <IonButton className="close-msg-btn">
+                  <IonIcon icon={close} color="light" />
+                </IonButton>
+              </IonCard>
+            </IonCard>
+          ))}
+          <IonButton className="see-all-btn">
+            <IonText color="light">See all</IonText>
+          </IonButton>
+        </IonCard>
       </IonModal>
     </>
   );
