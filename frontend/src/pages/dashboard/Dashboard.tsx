@@ -1,12 +1,36 @@
-import React from "react";
+import { useState } from "react";
 import Header from "../../components/layouts/header/Header";
 import { IonImg, IonContent, IonCard, IonText } from "@ionic/react";
 
 import bgLayout from "../../assets/img/layouts/dashboard-layout-1.svg";
 import bgLayout2 from "../../assets/img/layouts/dashboard-layout-2.svg";
 import inventoryIcon from "../../assets/icons/inventory.svg";
+import approvedMenu from "../../assets/icons/approved-menu.svg";
+import taskCompleteIcon from "../../assets/icons/task-complete.svg";
 
 import "./Dashboard.css";
+
+interface AppLink {
+  id: number;
+  title: string;
+  link: string;
+  icon: string;
+}
+
+// const [appLinks] = useState<AppLink[]>([
+//   {
+//     id: 1,
+//     title: 'Inventory',
+//     link: '/inventory',
+//     icon: inventoryIcon
+//   },
+//   {
+//     id: 2,
+//     title: 'Approvals/Requests',
+//     link: '/approvals',
+//     icon: approvedMenu
+//   },
+// ])
 
 const Dashboard = () => {
   return (
@@ -20,7 +44,11 @@ const Dashboard = () => {
         <IonCard className="bg-overlay">
           <IonCard className="main-dashboard container">
             {[1, 2, 3, 4, 5].map(num => (
-              <IonCard key={num} className="custom-card">
+              <IonCard
+                key={num}
+                routerLink="/inventory"
+                className="custom-card"
+              >
                 <IonCard className="card-header">
                   <svg
                     width="26"
