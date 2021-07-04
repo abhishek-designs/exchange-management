@@ -1,0 +1,193 @@
+.notif-view-contain .container {
+  padding: 1.5rem 0;
+}
+
+.notif-view-contain .top-header {
+  display: flex;
+  align-items: center;
+}
+
+.notif-view-contain .notif-view-parent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.notif-view-contain .main-section {
+  position: relative;
+  width: 60%;
+  margin-right: 1.5rem;
+}
+
+.notif-view-contain .tracking-tab {
+  width: 40%;
+}
+
+.notif-view-contain .main-section .section-head {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.notif-view-contain .main-section .section-head .item-stat {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+}
+
+.notif-view-contain .main-section .section-head .item-stat .stat-name {
+  color: var(--ion-color-primary);
+  padding-bottom: 1rem;
+}
+
+.notif-view-contain .main-section .section-center {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.notif-view-contain .main-section .section-center .item-img {
+  margin-right: 2rem;
+  height: 12rem;
+  width: 12rem;
+}
+
+.notif-view-contain .main-section .section-head .item-stat .stat-name {
+  font-size: 1rem;
+}
+
+.notif-view-contain .main-section .section-head .item-stat .stat-part {
+  font-size: 0.9rem;
+  color: var(--ion-color-primary);
+}
+
+.notif-view-contain .main-section .section-head .item-stat .origin {
+  display: flex;
+  align-items: center;
+}
+
+.notif-view-contain .main-section .section-head .item-stat .origin .stat-name {
+  padding-bottom: 0;
+}
+
+.notif-view-contain .main-section .section-head .item-stat .sub-matter {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.notif-view-contain .main-section .section-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.notif-view-contain .main-section .section-bottom .item-stat {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+  margin-bottom: 5rem;
+}
+
+.notif-view-contain .main-section .section-bottom .item-stat .stat-heading {
+  padding-bottom: 1rem;
+}
+
+.notif-view-contain .main-section .section-bottom .item-stat .stat-name {
+  font-size: 1rem;
+  color: var(--ion-color-primary);
+}
+
+.notif-view-contain
+  .main-section
+  .section-bottom
+  .item-stat
+  .stat-name
+  .item-id {
+  font-weight: 700;
+}
+
+.notif-view-contain .main-section .main-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 97%;
+  margin: 0.6rem;
+}
+
+.notif-view-contain .main-section .main-footer .stat-contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notif-view-contain .main-section .main-footer .stat-contain .attend-btn {
+  --box-shadow: none;
+  text-transform: capitalize;
+}
+
+.notif-view-contain
+  .main-section
+  .main-footer
+  .stat-contain
+  .attend-btn
+  .btn-caption {
+  font-weight: 400;
+  padding-left: 0.6rem;
+}
+
+.notif-view-contain .main-section .main-footer .stat-contain .item-status {
+  font-size: 1rem;
+}
+
+.notif-view-contain .tracking-tab .tracking-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.notif-view-contain .tracking-tab .app-card {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.notif-view-contain .tracking-tab .tracking-section .app-card {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.notif-view-contain .tracking-tab .tracking-section .app-card .track-time {
+  padding-bottom: 0.6rem;
+}
+
+.notif-view-contain .tracking-tab .progress-line {
+  /* display: flex; */
+  height: 2rem;
+  width: 2px;
+  background-color: var(--ion-color-primary);
+  margin: 0.6rem 0;
+  /* align-self: center; */
+}
+
+.stat-heading {
+  color: var(--ion-color-primary-alt);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.app-card {
+  padding: 0.6rem;
+  background-color: var(--ion-color-primary-light);
+}
+
+.app-card ion-text {
+  color: var(--ion-color-primary);
+}
+
+.app-card.track-active {
+  background-color: #bce9bc;
+}

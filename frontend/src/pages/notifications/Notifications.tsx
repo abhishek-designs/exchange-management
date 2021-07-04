@@ -255,7 +255,11 @@ const Notifications = () => {
                             <IonText color="primary">View</IonText>
                           </IonButton>
                         ) : (
-                          <IonButton fill="outline" color="primary">
+                          <IonButton
+                            routerLink={`/notifications/${data.id}`}
+                            fill="outline"
+                            color="primary"
+                          >
                             <svg
                               width="25"
                               height="28"

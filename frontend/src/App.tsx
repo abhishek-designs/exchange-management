@@ -9,6 +9,7 @@ import Notifications from "./pages/notifications/Notifications";
 import Approvals from "./pages/approvals/Approvals";
 import Tasks from "./pages/tasks/Tasks";
 import Inventory from "./pages/inventory/Inventory";
+import NotificationView from "./pages/notification-view/NotificationView";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -48,6 +49,11 @@ const App: React.FC = () => {
             <Route exact path="/approvals" component={Approvals} />
             <Route exact path="/tasks" component={Tasks} />
             <Route exact path="/inventory" component={Inventory} />
+            <Route
+              exact
+              path="/notifications/:id"
+              component={NotificationView}
+            />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

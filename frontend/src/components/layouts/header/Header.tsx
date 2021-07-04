@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   IonHeader,
   IonToolbar,
@@ -14,6 +14,7 @@ import {
   CreateAnimation,
   Animation,
 } from "@ionic/react";
+import { useLocation } from "react-router-dom";
 
 import appLogo from "../../../assets/icons/app-logo.svg";
 import compLogo from "../../../assets/icons/napims-logo.png";
@@ -26,6 +27,21 @@ import "./Header.css";
 const Header = () => {
   // State to control notification modal
   const [notifModal, setNotifModal] = useState<boolean>(false);
+  // State for current page
+  const [currentPage, setCurrentPage] = useState<string>("");
+
+  const location = useLocation();
+
+  // Function to set current page
+  const updateCurrentPage = () => {
+    const loc = location.pathname.split("/")[1];
+    const finalLoc = loc.charAt(0).toUpperCase() + location.pathname.slice(2);
+    setCurrentPage(finalLoc);
+  };
+
+  useEffect(() => {
+    updateCurrentPage();
+  }, [location]);
 
   return (
     <>
@@ -47,7 +63,7 @@ const Header = () => {
                   </IonText>
                 </IonCard>
                 <IonCard color="primary-light" className="page-status">
-                  <IonText color="light">Dashboard</IonText>
+                  <IonText color="light">{currentPage}</IonText>
                 </IonCard>
               </IonCard>
               <IonCard className="header-right">
@@ -67,7 +83,7 @@ const Header = () => {
                 <IonButton
                   fill="clear"
                   className="header-btn notification-btn nav-item"
-                  onClick={() => setNotifModal(true)}
+                  // onClick={() => setNotifModal(true)}
                 >
                   <IonImg src={bellIcon} alt="bell icon" />
                   <IonBadge color="secondary">9+</IonBadge>
