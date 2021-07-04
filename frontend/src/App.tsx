@@ -10,6 +10,8 @@ import Approvals from "./pages/approvals/Approvals";
 import Tasks from "./pages/tasks/Tasks";
 import Inventory from "./pages/inventory/Inventory";
 import NotificationView from "./pages/notification-view/NotificationView";
+import ApprovalView from "./pages/approval-view/ApprovalView";
+import TaskView from "./pages/task-view/TaskView";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -54,6 +56,8 @@ const App: React.FC = () => {
               path="/notifications/:id"
               component={NotificationView}
             />
+            <Route exact path="/approvals/:id" component={ApprovalView} />
+            <Route exact path="/tasks/:id" component={TaskView} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

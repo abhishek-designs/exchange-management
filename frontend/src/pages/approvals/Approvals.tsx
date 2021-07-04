@@ -254,7 +254,11 @@ const Approvals = () => {
                           {data.status}
                         </IonText>
 
-                        <IonButton fill="outline" color="primary">
+                        <IonButton
+                          routerLink={`/approvals/${data.id}`}
+                          fill="outline"
+                          color="primary"
+                        >
                           <svg
                             width="19"
                             height="13"

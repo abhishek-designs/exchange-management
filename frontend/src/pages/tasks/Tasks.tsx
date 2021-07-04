@@ -300,7 +300,11 @@ const Tasks = () => {
                       {/* Assigner */}
                       <IonCard className="row row-6">
                         <IonText color="primary">{data.assigner}</IonText>
-                        <IonButton fill="outline" color="primary">
+                        <IonButton
+                          routerLink={`/tasks/${data.id}`}
+                          fill="outline"
+                          color="primary"
+                        >
                           <svg
                             width="19"
                             height="13"
