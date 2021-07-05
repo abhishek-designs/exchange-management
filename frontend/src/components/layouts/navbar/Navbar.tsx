@@ -82,7 +82,7 @@ const Navbar = () => {
       id: 8,
       icon: disposal,
       title: "Disposal",
-      link: "/inventory",
+      link: "/disposal",
     },
   ]);
 

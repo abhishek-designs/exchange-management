@@ -43,3 +43,6 @@
 .primary-alt {
   background-color: var(--ion-color-primary-alt);
 }
+.danger-alt {
+  background-color: var(--ion-color-danger-alt);
+}

@@ -78,6 +78,7 @@ http://ionicframework.com/docs/theming/ */
   /* Custom */
   --ion-color-primary-light: #e5f0e5;
   --ion-color-danger-light: #ffcccc;
+  --ion-color-danger-alt: #fce3e3;
   --ion-color-warning-light: #ffe9cc;
   --ion-color-primary-alt: #338533;
 
@@ -106,6 +107,9 @@ ion-card {
 }
 .ion-color-danger-light {
   --ion-color-base: var(--ion-color-danger-light);
+}
+.ion-color-danger-alt {
+  --ion-color-base: var(--ion-color-danger-alt);
 }
 .ion-color-warning-light {
   --ion-color-base: var(--ion-color-warning-light);

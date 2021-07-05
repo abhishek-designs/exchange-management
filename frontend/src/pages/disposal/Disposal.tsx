@@ -30,13 +30,18 @@ import {
   chevronBack,
   chevronForward,
   locationOutline,
+  checkmark,
 } from "ionicons/icons";
 
-import { TableHead, Inventory, Exchange as ExchangeItem } from "../../types";
+import {
+  TableHead,
+  Exchange as ExchangeItem,
+  Disposal as DisposalItem,
+} from "../../types";
 
-import "./Exchange.css";
+import "./Disposal.css";
 
-const Exchange = () => {
+const Disposal = () => {
   // State for search
   const [search, setSearch] = useState<string>("");
   // State for table headers
@@ -48,12 +53,12 @@ const Exchange = () => {
     },
     {
       id: 2,
-      title: "Serial No.",
+      title: "Operator",
       isSortable: false,
     },
     {
       id: 3,
-      title: "Purchase Date",
+      title: "Initiation Date",
       isSortable: true,
     },
     {
@@ -63,33 +68,27 @@ const Exchange = () => {
     },
     {
       id: 5,
-      title: "Status",
-      isSortable: false,
-    },
-    {
-      id: 6,
-      title: "Operator",
+      title: "Disposal Status",
       isSortable: false,
     },
   ]);
   // State for table data
-  const [approvals] = useState<ExchangeItem[]>([
+  const [disposals] = useState<DisposalItem[]>([
     {
       id: 1,
       itemImg: exchangeItem1,
       nameType: {
         name: "TCI Tricone drill bits",
         type: "Spare Part",
-        location: "Kano",
+        itemId: "SN/8893UB7",
       },
-      serialNo: "SN/8893UB7",
-      purchaseDate: "12/02/2018",
-      quantity: 10,
-      status: "Surplus",
       operator: {
         title: "Shell",
         img: shellIcon,
       },
+      initDate: "12/02/2020",
+      quantity: 10,
+      status: "Inspection Report (70%)",
     },
     {
       id: 2,
@@ -97,99 +96,54 @@ const Exchange = () => {
       nameType: {
         name: "Air Clutch & WPT Clutch",
         type: "Spare Part",
-        location: "Abuja",
+        itemId: "SN/8733UB7",
       },
-      serialNo: "SN/8733UB7",
-      purchaseDate: "12/03/2017",
-      quantity: 23,
-      status: "Obsolete",
       operator: {
         title: "Shell",
         img: shellIcon,
       },
-    },
-    {
-      id: 3,
-      itemImg: exchangeItem2,
-      nameType: {
-        name: "Jet Mud Mixer",
-        type: "Spare Part",
-        location: "Kano",
-      },
-      serialNo: "SN/8733UA8",
-      purchaseDate: "12/03/2018",
-      quantity: 20,
-      status: "Obsolete",
-      operator: {
-        title: "Shell",
-        img: shellIcon,
-      },
+      initDate: "12/03/2017",
+      quantity: 10,
+      status: "Disposal Approved (100%)",
     },
   ]);
 
   return (
     <>
       <Header />
-      <IonContent className="page-contain exchange-contain">
+      <IonContent className="page-contain disposal-contain">
         <IonCard className="container">
           {/* Header */}
           <IonCard className="main-header">
             {/* Stats */}
             <IonCard className="main-header-left">
-              <IonCard className="num-stat new-num types-num primary">
-                <IonText color="light" className="stat-num">
+              <IonCard className="num-stat new-num types-num danger-alt">
+                <IonText color="danger" className="stat-num">
                   343
                 </IonText>
-                <IonText color="light">Item Types</IonText>
+                <IonText color="danger">Item Type</IonText>
               </IonCard>
 
-              <IonCard className="main-stats primary">
+              <IonCard className="main-stats">
                 <IonCard className="num-stat new-num">
-                  <IonText color="light" className="stat-num">
-                    2.5k
+                  <IonText color="danger" className="stat-num">
+                    2
                   </IonText>
-                  <IonText color="light">Items</IonText>
+                  <IonText color="danger">Items</IonText>
                 </IonCard>
                 <IonCard className="divider"></IonCard>
                 <IonCard className="num-stat total-num">
-                  <IonText color="light" className="stat-num">
-                    1.2k
+                  <IonText color="danger" className="stat-num">
+                    2
                   </IonText>
-                  <IonText color="light">Movable</IonText>
+                  <IonText color="danger">Movable</IonText>
                 </IonCard>
                 <IonCard className="num-stat total-num">
-                  <IonText color="light" className="stat-num">
-                    1.3k
+                  <IonText color="danger" className="stat-num">
+                    0
                   </IonText>
-                  <IonText color="light">Non movable</IonText>
+                  <IonText color="danger">Non movable</IonText>
                 </IonCard>
-              </IonCard>
-
-              <IonCard className="header-select-contain">
-                <IonSelect
-                  placeholder="Operators"
-                  interface="popover"
-                  className="main-select-box"
-                >
-                  <IonSelectOption value="1">Operator 1</IonSelectOption>
-                  <IonSelectOption value="2">Operator 2</IonSelectOption>
-                </IonSelect>
-                <IonSelect
-                  placeholder="Location"
-                  interface="popover"
-                  className="main-select-box"
-                >
-                  <IonSelectOption value="1">Location 1</IonSelectOption>
-                  <IonSelectOption value="2">Location 2</IonSelectOption>
-                </IonSelect>
-                <IonSelect
-                  placeholder="Item Type"
-                  interface="popover"
-                  className="main-select-box"
-                >
-                  <IonSelectOption value="1">Type 1</IonSelectOption>
-                  <IonSelectOption value="2">Type 2</IonSelectOption>
-                </IonSelect>
               </IonCard>
             </IonCard>
           </IonCard>
@@ -203,14 +157,6 @@ const Exchange = () => {
                 className="search-field"
               />
               <IonCard className="section-right-header">
-                <IonSelect
-                  placeholder="Status"
-                  interface="popover"
-                  className="main-select-box"
-                >
-                  <IonSelectOption value="1">Status 1</IonSelectOption>
-                  <IonSelectOption value="2">Status 2</IonSelectOption>
-                </IonSelect>
                 <IonCard color="primary-light" className="timeline">
                   <IonCard className="timeline-label">
                     <IonImg
@@ -218,7 +164,7 @@ const Exchange = () => {
                       alt="calender logo"
                       className="calender-logo"
                     />
-                    <IonText color="primary">Purchase Date</IonText>
+                    <IonText color="primary">Disposal Initiation Date</IonText>
                   </IonCard>
                   <IonCard className="timeline-main">
                     <IonCard className="dash"></IonCard>
@@ -227,10 +173,23 @@ const Exchange = () => {
                     <IonText color="primary">12/3/2020</IonText>
                   </IonCard>
                 </IonCard>
-                <IonCard className="overdue-contain">
-                  <IonLabel color="warning">Approaching Overdue</IonLabel>
-                  <IonToggle color="warning" />
-                </IonCard>
+
+                <IonSelect
+                  placeholder="Item Type"
+                  interface="popover"
+                  className="main-select-box"
+                >
+                  <IonSelectOption value="1">Type 1</IonSelectOption>
+                  <IonSelectOption value="2">Type 2</IonSelectOption>
+                </IonSelect>
+                <IonSelect
+                  placeholder="Disposal Status"
+                  interface="popover"
+                  className="main-select-box"
+                >
+                  <IonSelectOption value="1">Status 1</IonSelectOption>
+                  <IonSelectOption value="2">Status 2</IonSelectOption>
+                </IonSelect>
               </IonCard>
             </IonCard>
 
@@ -259,7 +218,7 @@ const Exchange = () => {
                 {/* Table data */}
                 <IonCard className="table-data">
                   {/* Data row */}
-                  {approvals.map(data => (
+                  {disposals.map(data => (
                     <IonCard
                       key={data.id}
                       className={`data-row data-row-${data.id}`}
@@ -270,7 +229,7 @@ const Exchange = () => {
                           className="exchange-item-img"
                         />
                       </IonCard>
-                      {/* Notification */}
+                      {/* Name & Type */}
                       <IonCard className="row row-1">
                         <IonText color="primary" className="approve-msg">
                           {data.nameType.name}
@@ -279,43 +238,38 @@ const Exchange = () => {
                           {data.nameType.type}
                         </IonText>
                         <IonCard className="location-contain">
-                          <IonIcon icon={locationOutline} color="primary" />
                           <IonText color="primary" className="approve-msg">
-                            {data.nameType.location}
+                            {data.nameType.itemId}
                           </IonText>
-                        </IonCard>
-                      </IonCard>
-                      {/* Serial no. */}
-                      <IonCard className="row row-2">
-                        <IonText color="primary">{data.serialNo}</IonText>
-                      </IonCard>
-                      {/* Purchase date */}
-                      <IonCard className="row row-2">
-                        <IonText color="primary">{data.purchaseDate}</IonText>
-                      </IonCard>
-                      {/* Quantity */}
-                      <IonCard className="row row-3">
-                        <IonText color="primary" className="notif-date">
-                          {data.quantity} Units
-                        </IonText>
-                        {/* <IonText color="primary">{data.timestamp.time}</IonText> */}
-                      </IonCard>
-                      {/* Status */}
-                      <IonCard className="row row-4">
-                        <IonCard className="danger-light status-card">
-                          <IonText color="danger">{data.status}</IonText>
                         </IonCard>
                       </IonCard>
                       {/* Operator */}
+                      <IonCard className="row row-2">
+                        <IonText color="primary">{data.operator.title}</IonText>
+                        <IonImg
+                          src={data.operator.img}
+                          alt="shell icon"
+                          className="origin-img"
+                        />
+                      </IonCard>
+                      {/* Init Date */}
+                      <IonCard className="row row-3">
+                        <IonText color="primary" className="notif-date">
+                          {data.initDate}
+                        </IonText>
+                      </IonCard>
+                      {/* Quantity*/}
                       <IonCard className="row row-4">
-                        <IonCard className="operator-contain">
-                          <IonText color="primary">
-                            {data.operator.title}
-                          </IonText>
-                          <IonImg
-                            src={data.operator.img}
-                            alt="shell icon"
-                            className="origin-img"
+                        <IonText color="danger">{data.quantity} Units</IonText>
+                      </IonCard>
+                      {/* Status */}
+                      <IonCard className="row row-4">
+                        <IonCard className="checked-status">
+                          <IonText color="primary">{data.status}</IonText>
+                          <IonIcon
+                            icon={checkmark}
+                            color="primary"
+                            className="check-icon"
                           />
                         </IonCard>
                         <IonButton fill="outline" color="primary">
@@ -349,18 +303,17 @@ const Exchange = () => {
                     <IonSelect
                       interface="popover"
                       className="num-option"
-                      value="3"
+                      value="2"
                     >
                       <IonSelectOption value="1">1</IonSelectOption>
                       <IonSelectOption value="2">2</IonSelectOption>
-                      <IonSelectOption value="3">3</IonSelectOption>
                     </IonSelect>
                     <IonText color="primary" className="pl-1">
-                      1-3 of 500 Materials
+                      1-2 of 2 Materials
                     </IonText>
                   </IonCard>
                   <IonCard className="right-footer-content">
-                    <IonText color="primary">1 of 200 Pages</IonText>
+                    <IonText color="primary">1 of 1 Pages</IonText>
                     <IonCard className="pagination-ctrl">
                       <IonButton
                         fill="clear"
@@ -371,11 +324,9 @@ const Exchange = () => {
                       <IonSelect
                         interface="popover"
                         className="num-option"
-                        value="3"
+                        value="1"
                       >
                         <IonSelectOption value="1">1</IonSelectOption>
-                        <IonSelectOption value="2">2</IonSelectOption>
-                        <IonSelectOption value="3">3</IonSelectOption>
                       </IonSelect>
                       <IonButton
                         fill="clear"
@@ -395,4 +346,4 @@ const Exchange = () => {
   );
 };
 
-export default Exchange;
+export default Disposal;

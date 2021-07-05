@@ -91,6 +91,20 @@ export interface Exchange {
   operator: Origin;
 }
 
+export interface Disposal {
+  id: number;
+  itemImg: string;
+  nameType: {
+    name: string;
+    type: string;
+    itemId: string;
+  };
+  operator: Origin;
+  initDate: string;
+  quantity: number;
+  status: string;
+}
+
 export interface TableHead {
   id: number;
   title: string;
