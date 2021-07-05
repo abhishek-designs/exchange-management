@@ -17,6 +17,7 @@ import Disposal from "./pages/disposal/Disposal";
 import Operator from "./pages/operator/Operator";
 import Items from "./pages/items/Items";
 import InventoryView from "./pages/inventory-view/InventoryView";
+import ExchangeView from "./pages/exchange-view/ExchangeView";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -68,6 +69,11 @@ const App: React.FC = () => {
             <Route exact path="/operators/:id" component={Operator} />
             <Route exact path="/items" component={Items} />
             <Route exact path="/inventory/:id" component={InventoryView} />
+            <Route
+              exact
+              path="/exchange_platform/:id"
+              component={ExchangeView}
+            />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

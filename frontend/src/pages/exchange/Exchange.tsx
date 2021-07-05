@@ -318,7 +318,11 @@ const Exchange = () => {
                             className="origin-img"
                           />
                         </IonCard>
-                        <IonButton fill="outline" color="primary">
+                        <IonButton
+                          routerLink={`/exchange_platform/${data.id}`}
+                          fill="outline"
+                          color="primary"
+                        >
                           <svg
                             width="19"
                             height="13"
