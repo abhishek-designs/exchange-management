@@ -132,6 +132,17 @@ export interface Operator {
   tableDesc: OperatorItem[];
 }
 
+export interface Item {
+  id: number;
+  itemImg: string;
+  title: string;
+  itemNo: string;
+  type: string;
+  mobility: string;
+  description: string;
+  checked: boolean;
+}
+
 export interface TableHead {
   id: number;
   title: string;

@@ -15,6 +15,8 @@ import TaskView from "./pages/task-view/TaskView";
 import Exchange from "./pages/exchange/Exchange";
 import Disposal from "./pages/disposal/Disposal";
 import Operator from "./pages/operator/Operator";
+import Items from "./pages/items/Items";
+import InventoryView from "./pages/inventory-view/InventoryView";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -64,6 +66,8 @@ const App: React.FC = () => {
             <Route exact path="/exchange_platform" component={Exchange} />
             <Route exact path="/disposal" component={Disposal} />
             <Route exact path="/operators/:id" component={Operator} />
+            <Route exact path="/items" component={Items} />
+            <Route exact path="/inventory/:id" component={InventoryView} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

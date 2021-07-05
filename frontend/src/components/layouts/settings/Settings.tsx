@@ -39,7 +39,7 @@ const Settings = () => {
       id: 2,
       icon: itemsIcon,
       title: "Items",
-      link: "/notifications",
+      link: "/items",
     },
     {
       id: 3,

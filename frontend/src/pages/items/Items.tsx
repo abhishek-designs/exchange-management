@@ -15,61 +15,94 @@ import {
 import Header from "../../components/layouts/header/Header";
 import AppTable from "../../components/layouts/app-table/AppTable";
 
+import approveItem1 from "../../assets/img/items/approve-item-1.png";
+import exchangeItem1 from "../../assets/img/items/exchange-item-1.png";
+import exchangeItem2 from "../../assets/img/items/exchange-item-2.png";
 import calenderLogo from "../../assets/icons/calender.svg";
 import totalIcon from "../../assets/icons/total-logo.png";
 import shellIcon from "../../assets/icons/shell.svg";
+import shellLogo from "../../assets/img/shell-logo.png";
 import importData from "../../assets/icons/import-data.svg";
 import exportData from "../../assets/icons/export-data.svg";
-import { arrowForward, chevronBack, chevronForward } from "ionicons/icons";
+import {
+  arrowForward,
+  chevronBack,
+  chevronForward,
+  funnelOutline,
+  addOutline,
+} from "ionicons/icons";
 
-import { TableHead, Approval, Inventory } from "../../types";
+import {
+  TableHead,
+  Inventory,
+  Operator as OperatorItem,
+  Item as ItemData,
+} from "../../types";
 
-import "./Inventory.css";
+import "./Items.css";
 
-const Approvals = () => {
+const Items = () => {
   // State for search
   const [search, setSearch] = useState<string>("");
   // State for table headers
   const [approveHeader] = useState<TableHead[]>([
     {
       id: 1,
-      title: "Name & Type",
+      title: "Name",
       isSortable: true,
     },
     {
       id: 2,
-      title: "Operator",
-      isSortable: true,
+      title: "Item No.",
+      isSortable: false,
     },
     {
       id: 3,
-      title: "IV/PSC",
-      isSortable: true,
+      title: "Type",
+      isSortable: false,
     },
     {
       id: 4,
-      title: "Stock Loc.",
-      isSortable: true,
+      title: "Mobility",
+      isSortable: false,
     },
     {
       id: 5,
-      title: "Cost($)",
-      isSortable: true,
-    },
-    {
-      id: 6,
-      title: "Cost(₦)",
-      isSortable: true,
-    },
-    {
-      id: 7,
-      title: "Quantity",
-      isSortable: true,
-    },
-    {
-      id: 8,
-      title: "Status",
+      title: "Description",
       isSortable: false,
+    },
+  ]);
+  // State for the current operator
+  const [items] = useState<ItemData[]>([
+    {
+      id: 1,
+      itemImg: exchangeItem1,
+      title: "TCI Tricone drill bits",
+      itemNo: "IN/8893UB7",
+      type: "Spare Part",
+      mobility: "Movable",
+      description: "TC1 Tricone Drill Bits",
+      checked: false,
+    },
+    {
+      id: 2,
+      itemImg: approveItem1,
+      title: "Air Clutch & WPT Clutch",
+      itemNo: "IN/8733UB7",
+      type: "Spare Part",
+      mobility: "Movable",
+      description: "Air Clutch & WPT Clutch",
+      checked: false,
+    },
+    {
+      id: 3,
+      itemImg: exchangeItem2,
+      title: "Jet Mud Mixer",
+      itemNo: "IN/8753UA8",
+      type: "Spare Part",
+      mobility: "Movable",
+      description: "Jet Mud Mixer",
+      checked: false,
     },
   ]);
   // State for table data
@@ -145,36 +178,29 @@ const Approvals = () => {
   return (
     <>
       <Header />
-      <IonContent className="page-contain inventory-contain">
+      <IonContent className="page-contain items-contain">
         <IonCard className="container">
           {/* Header */}
           <IonCard className="main-header">
             {/* Stats */}
             <IonCard className="main-header-left">
-              <IonCard className="num-stat new-num types-num">
-                <IonText color="primary" className="stat-num">
-                  330
-                </IonText>
-                <IonText color="primary">Item Types</IonText>
-              </IonCard>
-
               <IonCard color="primary-light" className="main-stats">
                 <IonCard className="num-stat new-num">
                   <IonText color="primary" className="stat-num">
-                    4.8k
+                    505
                   </IonText>
                   <IonText color="primary">Items</IonText>
                 </IonCard>
                 <IonCard className="divider"></IonCard>
                 <IonCard className="num-stat total-num">
                   <IonText color="primary" className="stat-num">
-                    3.8k
+                    380
                   </IonText>
                   <IonText color="primary">Movable</IonText>
                 </IonCard>
                 <IonCard className="num-stat total-num">
                   <IonText color="primary" className="stat-num">
-                    1.4k
+                    125
                   </IonText>
                   <IonText color="primary">Non movable</IonText>
                 </IonCard>
@@ -188,14 +214,6 @@ const Approvals = () => {
                 >
                   <IonSelectOption value="1">Type 1</IonSelectOption>
                   <IonSelectOption value="2">Type 2</IonSelectOption>
-                </IonSelect>
-                <IonSelect
-                  placeholder="Operators"
-                  interface="popover"
-                  className="main-select-box"
-                >
-                  <IonSelectOption value="1">Operator 1</IonSelectOption>
-                  <IonSelectOption value="2">Operator 2</IonSelectOption>
                 </IonSelect>
               </IonCard>
             </IonCard>
@@ -232,6 +250,12 @@ const Approvals = () => {
                   2
                 </IonBadge>
               </IonCard>
+
+              {/* Add item button */}
+              <IonButton className="inventory-btn add-item-btn">
+                <IonIcon icon={addOutline} color="light" />
+                <IonText color="light">Add Item</IonText>
+              </IonButton>
             </IonCard>
           </IonCard>
 
@@ -243,10 +267,23 @@ const Approvals = () => {
                 onIonChange={e => setSearch(e.detail.value!)}
                 className="search-field"
               />
-              <IonCard className="total-cost-contain">
-                <IonText color="primary">
-                  Total Cost &nbsp;-&nbsp; ₦ 2,590,990,889.00
-                </IonText>
+              <IonCard className="section-header-right">
+                <IonCard color="primary-light" className="timeline">
+                  <IonCard className="timeline-label">
+                    <IonImg
+                      src={calenderLogo}
+                      alt="calender logo"
+                      className="calender-logo"
+                    />
+                    <IonText color="primary">Purchase Date</IonText>
+                  </IonCard>
+                  <IonCard className="timeline-main">
+                    <IonCard className="dash"></IonCard>
+                    <IonText color="primary">12/3/2000</IonText>
+                    <IonIcon icon={arrowForward} color="primary" />
+                    <IonText color="primary">12/3/2020</IonText>
+                  </IonCard>
+                </IonCard>
               </IonCard>
             </IonCard>
 
@@ -260,6 +297,7 @@ const Approvals = () => {
                     <IonCard className={`row row-0`}>
                       <IonCheckbox />
                     </IonCard>
+                    <IonCard className={`row row-0`}></IonCard>
                     {/* Notification */}
                     {approveHeader.map(row => (
                       <IonCard key={row.id} className={`row row-${row.id}`}>
@@ -277,7 +315,7 @@ const Approvals = () => {
                 {/* Table data */}
                 <IonCard className="table-data">
                   {/* Data row */}
-                  {approvals.map(data => (
+                  {items.map(data => (
                     <IonCard
                       key={data.id}
                       className={`data-row data-row-${data.id}`}
@@ -285,66 +323,37 @@ const Approvals = () => {
                       <IonCard className="row row-0">
                         <IonCheckbox checked={data.checked} />
                       </IonCard>
-                      {/* Notification */}
+                      {/* Item img */}
                       <IonCard className="row row-1">
-                        <IonText color="primary" className="approve-msg">
-                          {data.nameType.name}
-                        </IonText>
-                        <IonText color="primary" className="approve-msg">
-                          {data.nameType.type}
-                        </IonText>
-                        <IonText color="primary" className="approve-msg">
-                          {data.nameType.itemId}
-                        </IonText>
+                        <IonImg src={data.itemImg} />
                       </IonCard>
-                      {/* Origin */}
+                      {/* Name */}
                       <IonCard className="row row-2">
-                        <IonText color="primary">{data.operator.title}</IonText>
-                        <IonImg
-                          src={data.operator.img}
-                          alt="shell icon"
-                          className="origin-img"
-                        />
+                        <IonText color="primary" className="approve-msg">
+                          {data.title}
+                        </IonText>
                       </IonCard>
-                      {/* IV/PSC */}
+                      {/* Item No. */}
                       <IonCard className="row row-3">
                         <IonText color="primary" className="notif-date">
-                          {data.ivPsc}
+                          {data.itemNo}
                         </IonText>
                         {/* <IonText color="primary">{data.timestamp.time}</IonText> */}
                       </IonCard>
-                      {/* Type */}
-                      <IonCard className="row row-4">
-                        <IonText color="primary">{data.stock}</IonText>
+                      <IonCard className="row row-3">
+                        <IonText color="primary" className="notif-date">
+                          {data.type}
+                        </IonText>
+                        {/* <IonText color="primary">{data.timestamp.time}</IonText> */}
                       </IonCard>
-                      {/* Type */}
+                      {/* Purchase date */}
                       <IonCard className="row row-4">
-                        <IonText color="primary">${data.costDollar}</IonText>
+                        <IonText color="primary">{data.mobility}</IonText>
                       </IonCard>
-                      {/* Type */}
+                      {/* Quantity */}
                       <IonCard className="row row-4">
-                        <IonText color="primary">₦{data.costNigerian}</IonText>
-                      </IonCard>
-                      {/* Type */}
-                      <IonCard className="row row-4">
-                        <IonText color="primary">{data.quantity} units</IonText>
-                      </IonCard>
-                      {/* Status */}
-                      <IonCard className="row row-5">
-                        <IonCard className="status-contain">
-                          <IonCard className="status-card active-status">
-                            <IonText color="primary">10 Active</IonText>
-                          </IonCard>
-                          <IonCard className="status-card inactive-status">
-                            <IonText color="danger">23 Inactive</IonText>
-                          </IonCard>
-                        </IonCard>
-
-                        <IonButton
-                          routerLink={`/inventory/${data.id}`}
-                          fill="outline"
-                          color="primary"
-                        >
+                        <IonText color="primary">{data.description}</IonText>
+                        <IonButton fill="outline" color="primary">
                           <svg
                             width="19"
                             height="13"
@@ -375,17 +384,18 @@ const Approvals = () => {
                     <IonSelect
                       interface="popover"
                       className="num-option"
-                      value="2"
+                      value="3"
                     >
                       <IonSelectOption value="1">1</IonSelectOption>
                       <IonSelectOption value="2">2</IonSelectOption>
+                      <IonSelectOption value="3">3</IonSelectOption>
                     </IonSelect>
                     <IonText color="primary" className="pl-1">
-                      1-2 of 233 Notifications
+                      1-3 of 500 Materials
                     </IonText>
                   </IonCard>
                   <IonCard className="right-footer-content">
-                    <IonText color="primary">1 of 5 Pages</IonText>
+                    <IonText color="primary">1 of 200 Pages</IonText>
                     <IonCard className="pagination-ctrl">
                       <IonButton
                         fill="clear"
@@ -396,10 +406,11 @@ const Approvals = () => {
                       <IonSelect
                         interface="popover"
                         className="num-option"
-                        value="1"
+                        value="3"
                       >
                         <IonSelectOption value="1">1</IonSelectOption>
                         <IonSelectOption value="2">2</IonSelectOption>
+                        <IonSelectOption value="3">3</IonSelectOption>
                       </IonSelect>
                       <IonButton
                         fill="clear"
@@ -419,4 +430,4 @@ const Approvals = () => {
   );
 };
 
-export default Approvals;
+export default Items;
