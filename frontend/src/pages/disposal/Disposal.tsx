@@ -272,7 +272,11 @@ const Disposal = () => {
                             className="check-icon"
                           />
                         </IonCard>
-                        <IonButton fill="outline" color="primary">
+                        <IonButton
+                          routerLink={`/disposal/${data.id}`}
+                          fill="outline"
+                          color="primary"
+                        >
                           <svg
                             width="19"
                             height="13"
