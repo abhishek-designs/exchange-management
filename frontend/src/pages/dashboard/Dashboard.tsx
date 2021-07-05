@@ -167,7 +167,7 @@ const Dashboard = () => {
               </IonCard>
             </IonCard>
 
-            <IonCard routerLink="/tasks" className="custom-card">
+            <IonCard routerLink="/disposal" className="custom-card">
               <IonCard className="card-header">
                 <svg
                   className="status-icon"
@@ -290,7 +290,7 @@ const Dashboard = () => {
               </IonCard>
             </IonCard>
 
-            <IonCard routerLink="/inventory" className="custom-card">
+            <IonCard routerLink="/exchange_platform" className="custom-card">
               <IonCard className="card-header">
                 <svg
                   className="status-icon"

@@ -58,7 +58,11 @@ const Operators = () => {
         <IonCard className="container">
           <IonCard className="operators-contain">
             {operators.map(operator => (
-              <IonCard key={operator.id} className="custom-card">
+              <IonCard
+                routerLink={`/operators/${operator.id}`}
+                key={operator.id}
+                className="custom-card"
+              >
                 <IonImg
                   src={operator.img}
                   alt={operator.title}

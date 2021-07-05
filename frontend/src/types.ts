@@ -105,6 +105,33 @@ export interface Disposal {
   status: string;
 }
 
+export interface OperatorItem {
+  itemId: number;
+  itemImg: string;
+  nameType: {
+    name: string;
+    type: string;
+  };
+  serialNo: string;
+  purchaseDate: string;
+  quantity: number;
+  status: {
+    activeStatus: number;
+    inactiveStatus?: number;
+  };
+  itemChecked: boolean;
+}
+
+export interface Operator {
+  id: number;
+  title: string;
+  logo: string;
+  itemsNo: number;
+  movableNo: number;
+  nonMovableNo: number;
+  tableDesc: OperatorItem[];
+}
+
 export interface TableHead {
   id: number;
   title: string;
