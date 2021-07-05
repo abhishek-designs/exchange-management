@@ -1,33 +1,33 @@
-.page-contain .page-section {
+.approval-contain .page-section {
   background-color: var(--ion-color-light);
   margin-top: 1.5rem;
 }
 
-.page-contain .container {
+.approval-contain .container {
   padding: 1.5rem 0;
 }
 
-.page-contain .main-header .main-stats,
-.page-contain .main-header .timeline {
+.approval-contain .main-header .main-stats,
+.approval-contain .main-header .timeline {
   background-color: var(--ion-color-primary-light);
   padding: 1rem;
 }
 
-.page-contain .main-header {
+.approval-contain .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.page-contain .main-header .header-right {
+.approval-contain .main-header .header-right {
   /* width: 50%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.page-contain .main-header .main-stats {
+.approval-contain .main-header .main-stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,20 +35,20 @@
   padding: 1rem 1.5rem;
 }
 
-.page-contain .main-header .main-stats .num-stat {
+.approval-contain .main-header .main-stats .num-stat {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.page-contain .main-header .main-stats .divider {
+.approval-contain .main-header .main-stats .divider {
   height: 3rem;
   width: 1.6px;
   background-color: var(--ion-color-primary);
 }
 
-.page-contain .main-header .main-stats .num-stat .new-num {
+.approval-contain .main-header .main-stats .num-stat .new-num {
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -59,7 +59,7 @@
   margin-right: 0.6rem;
 }
 
-.page-contain .main-header .timeline {
+.approval-contain .main-header .timeline {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,18 +67,18 @@
   margin-right: 1rem;
 }
 
-.page-contain .main-header .request-btn {
+.approval-contain .main-header .request-btn {
   --box-shadow: none;
   text-transform: capitalize;
   font-weight: 300;
   /* margin-left: */
 }
 
-.page-contain .main-header .request-btn .btn-caption {
+.approval-contain .main-header .request-btn .btn-caption {
   padding-right: 1rem;
 }
 
-.page-contain .main-header .request-btn .request-badge {
+.approval-contain .main-header .request-btn .request-badge {
   border-radius: 50%;
   height: 1.3rem;
   width: 1.3rem;
@@ -87,38 +87,38 @@
   align-items: center;
 }
 
-.page-contain .main-header .timeline .timeline-label {
+.approval-contain .main-header .timeline .timeline-label {
   display: flex;
   align-items: center;
 }
 
-.page-contain .main-header .main-stats .num-stat .stat-num {
+.approval-contain .main-header .main-stats .num-stat .stat-num {
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.page-contain .main-header .timeline .timeline-main {
+.approval-contain .main-header .timeline .timeline-main {
   display: flex;
   align-items: center;
   width: 53%;
   justify-content: space-between;
 }
 
-.page-contain .main-header .timeline .timeline-main .dash {
+.approval-contain .main-header .timeline .timeline-main .dash {
   height: 2px;
   background-color: var(--ion-color-primary);
   width: 2rem;
   border-radius: none;
 }
 
-.page-contain .section-header {
+.approval-contain .section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
-.page-contain .section-header .select-contain {
+.approval-contain .section-header .select-contain {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;

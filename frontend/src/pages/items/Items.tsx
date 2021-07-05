@@ -353,7 +353,11 @@ const Items = () => {
                       {/* Quantity */}
                       <IonCard className="row row-4">
                         <IonText color="primary">{data.description}</IonText>
-                        <IonButton fill="outline" color="primary">
+                        <IonButton
+                          routerLink={`/items/${data.id}`}
+                          fill="outline"
+                          color="primary"
+                        >
                           <svg
                             width="19"
                             height="13"
