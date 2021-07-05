@@ -76,6 +76,21 @@ export interface Inventory {
   checked: boolean;
 }
 
+export interface Exchange {
+  id: number;
+  itemImg: string;
+  nameType: {
+    name: string;
+    type: string;
+    location: string;
+  };
+  serialNo: string;
+  purchaseDate: string;
+  quantity: number;
+  status: string;
+  operator: Origin;
+}
+
 export interface TableHead {
   id: number;
   title: string;

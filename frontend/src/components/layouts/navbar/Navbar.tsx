@@ -76,7 +76,7 @@ const Navbar = () => {
       id: 7,
       icon: exchange,
       title: "Exchange Platform",
-      link: "/tasks",
+      link: "/exchange_platform",
     },
     {
       id: 8,

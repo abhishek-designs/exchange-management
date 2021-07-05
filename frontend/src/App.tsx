@@ -12,6 +12,7 @@ import Inventory from "./pages/inventory/Inventory";
 import NotificationView from "./pages/notification-view/NotificationView";
 import ApprovalView from "./pages/approval-view/ApprovalView";
 import TaskView from "./pages/task-view/TaskView";
+import Exchange from "./pages/exchange/Exchange";
 
 // Layouts
 import Navbar from "./components/layouts/navbar/Navbar";
@@ -58,6 +59,7 @@ const App: React.FC = () => {
             />
             <Route exact path="/approvals/:id" component={ApprovalView} />
             <Route exact path="/tasks/:id" component={TaskView} />
+            <Route exact path="/exchange_platform" component={Exchange} />
             <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
           </IonRouterOutlet>
         </IonPage>

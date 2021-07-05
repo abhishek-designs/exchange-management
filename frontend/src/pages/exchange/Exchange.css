@@ -1,0 +1,457 @@
+.exchange-contain .page-section {
+  background-color: var(--ion-color-light);
+  margin-top: 1.5rem;
+}
+
+.exchange-contain .container {
+  padding: 1.5rem 0;
+  margin-bottom: 5rem;
+}
+
+.exchange-contain .main-header .main-stats,
+.exchange-contain .main-header .timeline {
+  background-color: var(--ion-color-primary-light);
+  padding: 1rem;
+}
+
+.exchange-contain .main-header {
+  display: block;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+}
+
+.exchange-contain .main-header .header-right {
+  /* width: 50%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exchange-contain .main-header .main-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 20%; */
+  padding: 1rem 1.5rem;
+}
+
+.exchange-contain .main-header .main-stats .num-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.exchange-contain .main-header .main-stats .divider {
+  height: 3rem;
+  width: 1.6px;
+  background-color: var(--ion-color-primary);
+}
+
+.exchange-contain .main-header .main-stats .num-stat .new-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.calender-logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+.exchange-contain .main-header .timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.exchange-contain .main-header .request-btn {
+  --box-shadow: none;
+  text-transform: capitalize;
+  font-weight: 300;
+  /* margin-left: */
+}
+
+.exchange-contain .main-header .request-btn .btn-caption {
+  padding-right: 1rem;
+}
+
+.exchange-contain .main-header .request-btn .request-badge {
+  border-radius: 50%;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exchange-contain .main-header .timeline .timeline-label {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain .main-header .main-stats .num-stat .stat-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.exchange-contain .main-header .timeline .timeline-main {
+  display: flex;
+  align-items: center;
+  width: 53%;
+  justify-content: space-between;
+}
+
+.exchange-contain .main-header .timeline .timeline-main .dash {
+  height: 2px;
+  background-color: var(--ion-color-primary);
+  width: 2rem;
+  border-radius: none;
+}
+
+.exchange-contain .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.exchange-contain .section-header .select-contain {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  align-items: center;
+  /* grid-gap: 1rem; */
+  /* width: 50%; */
+}
+
+.approval-table .table-data .row-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.approval-table .table-data .row-1 .approve-msg {
+  font-weight: 700;
+  padding-bottom: 0.6rem;
+}
+
+.exchange-contain .main-header .main-header-left {
+  display: grid;
+  grid-template-columns: 0.4fr 0.8fr 0.6fr;
+  align-items: center;
+  /* width: 60%; */
+  grid-gap: 0.6rem;
+  /* justify-content: space-between; */
+}
+
+.exchange-contain .main-header .main-header-left .types-num {
+  /* background-color: var(--ion-color-primary); */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exchange-contain .main-header .main-header-left .types-num .stat-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.exchange-contain .main-header .main-header-left .main-stats {
+  width: 80%;
+  background-color: var(--ion-color-primary);
+}
+
+.exchange-contain .main-header .main-header-left .main-stats .divider {
+  background-color: var(--ion-color-light);
+}
+
+.exchange-contain .main-header .main-header-left .header-select-contain {
+  display: flex;
+  /* justify-content: space-between; */
+  /* width: 70%; */
+}
+
+.exchange-contain
+  .main-header
+  .main-header-left
+  .header-select-contain
+  .main-select-box {
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.exchange-contain .main-header .main-header-right .inventory-btn .btn-caption {
+  color: var(--ion-color-primary);
+  text-transform: capitalize;
+  padding-left: 0.6rem;
+}
+
+.exchange-contain .main-header .main-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exchange-contain .main-header .main-header-right .btn-contain {
+  position: relative;
+}
+
+.exchange-contain .main-header .main-header-right .btn-contain:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.exchange-contain .main-header .main-header-right .btn-contain .request-badge {
+  position: absolute;
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-light);
+  font-size: 0.6rem;
+  height: 1rem;
+  width: 1rem;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.exchange-contain .inventory-section .section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exchange-contain .inventory-section .section-header .section-right-header {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.6fr;
+  align-items: center;
+  grid-gap: 2rem;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  width: 60%;
+}
+
+.exchange-contain
+  .inventory-section
+  .section-header
+  .section-right-header
+  .overdue-contain {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain .inventory-section .section-header .total-cost-contain {
+  background-color: var(--ion-color-primary-light);
+  padding: 0.8rem;
+  margin-left: 1rem;
+}
+
+.exchange-contain .main-table {
+  margin-top: 1rem;
+}
+
+.exchange-contain .main-table .table-header .header-row .row-0 {
+  display: flex;
+  justify-content: center;
+}
+
+.exchange-contain .main-table .exchange-item-img {
+  height: 8rem;
+  width: 8rem;
+}
+
+.exchange-contain .main-table .table-header .header-row {
+  display: grid;
+  grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 0.4fr 0.6fr 1fr;
+  align-items: center;
+  grid-gap: 1rem;
+  border: 2px solid transparent;
+  border-top-color: var(--ion-color-primary-light);
+  border-bottom-color: var(--ion-color-primary-light);
+  border-radius: 0;
+  padding: 0.6rem 1rem;
+}
+
+.exchange-contain .main-table .table-header .header-row .row .row-label {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.exchange-contain .main-table .table-header .header-row .row:nth-child(3) {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain .main-table .table-header .header-row .row-label {
+  padding-right: 0.6rem;
+}
+
+.exchange-contain .main-table .table-header .header-row .fas {
+  color: var(--ion-color-primary);
+}
+
+.exchange-contain .main-table .table-data .data-row {
+  display: grid;
+  grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 0.4fr 0.6fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.exchange-contain .main-table .table-data .data-row .row:nth-child(2) {
+  display: flex;
+  /* align-items: center; */
+}
+
+.exchange-contain .main-table .table-data .data-row .row .row-5 {
+  display: flex;
+}
+
+.exchange-contain .main-table .table-data .data-row .row .location-contain {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain
+  .main-table
+  .table-data
+  .data-row
+  .row
+  .location-contain
+  .approve-msg {
+  padding-bottom: 0;
+  padding-left: 0.4rem;
+  font-weight: 400;
+}
+
+.exchange-contain .main-table .table-data .data-row .row .status-card {
+  padding: 1rem;
+  background-color: var(--ion-color-primary-light);
+}
+
+.exchange-contain .main-table .table-data .data-row .row:nth-child(3) {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* flex-direction: column; */
+}
+
+.exchange-contain .main-table .table-data .data-row .row-2 {
+  justify-content: flex-start;
+}
+
+.exchange-contain .main-table .table-data .data-row .row-4 .status-card {
+  background-color: var(--ion-color-danger-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.exchange-contain .main-table .table-data .data-row .row .operator-contain {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain .main-table .table-data .data-row .row:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exchange-contain
+  .main-table
+  .table-data
+  .data-row
+  .row:last-child
+  .active-status {
+  background-color: var(--ion-color-primary-light);
+  margin-bottom: 0.6rem;
+}
+.exchange-contain
+  .main-table
+  .table-data
+  .data-row
+  .row:last-child
+  .inactive-status {
+  background-color: var(--ion-color-danger-light);
+}
+
+.exchange-contain .main-table .table-data .origin-img {
+  height: 2rem;
+  margin-left: 0.6rem;
+}
+
+.exchange-contain
+  .main-table
+  .table-data
+  .data-row
+  .row:last-child
+  .bell-icon
+  path {
+  fill: var(--ion-color-primary);
+}
+
+.exchange-contain .main-table .table-data .data-row .row-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.exchange-contain .main-table .table-data .data-row .row:last-child .bell-icon {
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 0.6rem;
+}
+
+.exchange-contain .main-table .table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid transparent;
+  border-top-color: var(--ion-color-primary-light);
+}
+
+.exchange-contain .main-table .table-footer .left-footer-content,
+.exchange-contain .main-table .table-footer .right-footer-content {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-contain
+  .main-table
+  .table-footer
+  .right-footer-content
+  .pagination-ctrl {
+  display: flex;
+  align-items: center;
+}
+
+.notif-date {
+  padding-bottom: 0.4rem;
+}
+
+.exchange-contain .primary-light {
+  background-color: var(--ion-color-primary-light);
+}
+.exchange-contain .primary {
+  background-color: var(--ion-color-primary);
+}
+.exchange-contain .medium {
+  background-color: var(--ion-color-medium);
+}
+.exchange-contain .danger-light {
+  background-color: var(--ion-color-danger-light);
+}
+.exchange-contain .warning-light {
+  background-color: var(--ion-color-warning-light);
+}
+.exchange-contain .primary-alt {
+  background-color: var(--ion-color-primary-alt);
+}
