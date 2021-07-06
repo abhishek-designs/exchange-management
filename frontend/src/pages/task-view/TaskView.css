@@ -215,3 +215,103 @@
   color: var(--ion-color-primary);
   padding-bottom: 1rem;
 }
+
+/* Modal */
+.inspection-modal {
+  /* --width: 60%; */
+  --height: 80%;
+}
+
+.task-update-form-contain {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+  height: 100%;
+}
+
+.form-head {
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.inspection-modal .top-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.inspection-modal .top-content .modal-top-header {
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.inspection-modal .top-content .modal-header {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.inspection-modal .top-content .modal-top-header .edit-icon {
+  font-size: 1.1rem;
+  padding-right: 0.6rem;
+}
+
+.task-update-form-contain .form-contain {
+  margin-top: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-gap: 1.5rem; */
+  /* align-items: center; */
+}
+
+.task-update-form-contain .form-contain .status-select {
+  background-color: var(--ion-color-primary-light);
+  margin-top: 0.6rem;
+}
+
+.task-update-form-contain .form-contain .input-field {
+  --background: var(--ion-color-primary-light);
+  --placeholder-color: var(--ion-color-primary-alt);
+  --color: var(--ion-color-primary);
+  margin-top: 0.6rem;
+  border-radius: 6px;
+}
+
+.task-update-form-contain .form-contain .form-grp {
+  margin-bottom: 1.5rem;
+}
+
+.task-update-form-contain .form-contain .form-grp:nth-child(3) .input-field {
+  /* --padding-bottom: 3rem; */
+}
+
+.task-update-form-contain .form-contain .form-grp:last-child .input-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-update-form-contain .btn-grp {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  padding: 0 1rem;
+}
+
+.task-update-form-contain .btn-grp .form-btn {
+  text-transform: capitalize;
+}
+
+/* .form-grp {
+  margin-bottom: 1rem;
+} */
