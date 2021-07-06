@@ -1,0 +1,125 @@
+.login-contain {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--ion-color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout {
+  position: absolute;
+  /* height: 10rem;
+  width: 10rem; */
+}
+
+.layout-1 {
+  right: 0;
+  top: 0;
+}
+.layout-2 {
+  left: 0;
+  bottom: 0;
+}
+
+.login-form-contain .logo-contain .exchange-logo {
+  height: 5rem;
+  width: 5rem;
+}
+
+.login-form-contain .logo-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-contain {
+  width: 30%;
+  margin: 0 auto 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--ion-color-light);
+}
+
+.login-form-contain .form-box {
+  margin-top: 2rem;
+}
+
+.login-form-contain .logo-contain .exchange-logo-2 {
+  /* height: 6rem; */
+  width: 8rem;
+}
+
+.login-form-contain .input-field {
+  background: var(--ion-color-primary-light);
+  margin-top: 0.6rem;
+  color: var(--ion-color-primary);
+  font-size: 1.2rem;
+  font-weight: lighter;
+  border-radius: 6px;
+  /* padding: 0.6rem 0.3rem; */
+}
+
+.login-form-contain .form-grp {
+  margin-bottom: 2rem;
+}
+
+.login-form-contain .form-grp:nth-child(2) .input-field {
+  /* font-weight: bolder; */
+  /* text-align: right; */
+}
+
+.login-form-contain .form-grp:nth-child(2) .pwd-field {
+  display: flex;
+}
+
+.login-form-contain .form-grp:nth-child(2) .input-field .show-pwd-btn {
+  /* display: flex; */
+  /* justify-self: flex-end; */
+}
+
+.login-form-contain .btn-grp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.login-form-contain .btn-grp .login-btn {
+  text-transform: capitalize;
+}
+
+.login-form-contain .btn-grp .btn-link {
+  --padding-end: 0;
+  --padding-start: 0;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.login-contain .login-footer .logo-contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-contain .login-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-contain .login-footer .logo-contain .company-logo {
+  height: 4rem;
+  width: 4rem;
+}
+.login-contain .login-footer .logo-contain .company-logo-2 {
+  font-weight: 700;
+}
+
+.login-contain .login-footer .copy-text {
+  font-weight: lighter;
+  padding-top: 1rem;
+}

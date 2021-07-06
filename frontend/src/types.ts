@@ -19,6 +19,11 @@ export interface Timestamp {
 
 // }
 
+export interface Login {
+  username: string;
+  password: string;
+}
+
 export interface Notification {
   id: number;
   msg: string;
