@@ -422,3 +422,66 @@
 .notif-date {
   padding-bottom: 0.4rem;
 }
+
+/* Form modal */
+.form-modal {
+  --width: 60%;
+}
+
+.add-form-contain {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+  height: 100%;
+}
+
+.form-head {
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.add-form-contain .form-contain {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  /* align-items: center; */
+}
+
+.add-form-contain .form-contain .input-field {
+  --background: var(--ion-color-primary-light);
+  --placeholder-color: var(--ion-color-primary-alt);
+  --color: var(--ion-color-primary);
+  margin-top: 0.6rem;
+  border-radius: 6px;
+}
+
+.add-form-contain .form-contain .form-grp {
+  margin-bottom: 1rem;
+}
+
+.add-form-contain .form-contain .form-grp:nth-child(3) .input-field {
+  --padding-bottom: 3rem;
+}
+
+.add-form-contain .form-contain .form-grp:last-child .input-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-form-contain .btn-grp {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  padding: 0 1rem;
+}
+
+.add-form-contain .btn-grp .form-btn {
+  text-transform: capitalize;
+}

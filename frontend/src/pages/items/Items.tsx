@@ -11,6 +11,11 @@ import {
   IonSelectOption,
   IonSearchbar,
   IonCheckbox,
+  IonModal,
+  IonItem,
+  IonLabel,
+  IonInput,
+  IonTextarea,
 } from "@ionic/react";
 import Header from "../../components/layouts/header/Header";
 import AppTable from "../../components/layouts/app-table/AppTable";
@@ -19,25 +24,17 @@ import approveItem1 from "../../assets/img/items/approve-item-1.png";
 import exchangeItem1 from "../../assets/img/items/exchange-item-1.png";
 import exchangeItem2 from "../../assets/img/items/exchange-item-2.png";
 import calenderLogo from "../../assets/icons/calender.svg";
-import totalIcon from "../../assets/icons/total-logo.png";
-import shellIcon from "../../assets/icons/shell.svg";
-import shellLogo from "../../assets/img/shell-logo.png";
 import importData from "../../assets/icons/import-data.svg";
 import exportData from "../../assets/icons/export-data.svg";
 import {
   arrowForward,
   chevronBack,
   chevronForward,
-  funnelOutline,
   addOutline,
+  cloudUploadOutline,
 } from "ionicons/icons";
 
-import {
-  TableHead,
-  Inventory,
-  Operator as OperatorItem,
-  Item as ItemData,
-} from "../../types";
+import { TableHead, Item as ItemData } from "../../types";
 
 import "./Items.css";
 
@@ -105,75 +102,8 @@ const Items = () => {
       checked: false,
     },
   ]);
-  // State for table data
-  const [approvals] = useState<Inventory[]>([
-    {
-      id: 1,
-      nameType: {
-        itemId: "SN/8893UB7",
-        name: "TCI Tricone drill bits",
-        type: "Spare Part",
-      },
-      operator: {
-        title: "Shell",
-        img: shellIcon,
-      },
-      ivPsc: "ABC-XYZ",
-      stock: "Lagos",
-      costDollar: 5390,
-      costNigerian: 2390000,
-      quantity: 20,
-      status: {
-        acitve: 10,
-        inactive: 10,
-      },
-      checked: false,
-    },
-    {
-      id: 2,
-      nameType: {
-        itemId: "SN/8893UB7",
-        name: "TCI Tricone drill bits",
-        type: "Spare Part",
-      },
-      operator: {
-        title: "Shell",
-        img: shellIcon,
-      },
-      ivPsc: "ABC-XYZ",
-      stock: "Lagos",
-      costDollar: 5390,
-      costNigerian: 2390000,
-      quantity: 20,
-      status: {
-        acitve: 10,
-        inactive: 10,
-      },
-      checked: false,
-    },
-    {
-      id: 3,
-      nameType: {
-        itemId: "SN/8893UB7",
-        name: "TCI Tricone drill bits",
-        type: "Spare Part",
-      },
-      operator: {
-        title: "Shell",
-        img: shellIcon,
-      },
-      ivPsc: "ABC-XYZ",
-      stock: "Lagos",
-      costDollar: 5390,
-      costNigerian: 2390000,
-      quantity: 20,
-      status: {
-        acitve: 10,
-        inactive: 10,
-      },
-      checked: false,
-    },
-  ]);
+  // State for the add item modal
+  const [openModal, setModal] = useState<boolean>(false);
 
   return (
     <>
@@ -252,7 +182,10 @@ const Items = () => {
               </IonCard>
 
               {/* Add item button */}
-              <IonButton className="inventory-btn add-item-btn">
+              <IonButton
+                className="inventory-btn add-item-btn"
+                onClick={() => setModal(true)}
+              >
                 <IonIcon icon={addOutline} color="light" />
                 <IonText color="light">Add Item</IonText>
               </IonButton>
@@ -430,6 +363,94 @@ const Items = () => {
           </IonCard>
         </IonCard>
       </IonContent>
+      {/* Modal to add an item */}
+      <IonModal
+        isOpen={openModal}
+        onDidDismiss={() => setModal(false)}
+        backdropDismiss
+        cssClass="form-modal"
+      >
+        <IonCard className="add-form-contain">
+          <IonText color="primary" className="form-head">
+            Add Item
+          </IonText>
+          <IonCard className="form-contain">
+            <IonCard className="form-grp">
+              <IonLabel color="primary" className="input-label">
+                Item Name*
+              </IonLabel>
+              <IonInput
+                type="text"
+                className="input-field"
+                placeholder="New Item Name"
+                required
+              ></IonInput>
+            </IonCard>
+            <IonCard className="form-grp">
+              <IonLabel color="primary" className="input-label">
+                Date of purchase
+              </IonLabel>
+              <IonInput
+                type="date"
+                className="input-field"
+                placeholder="dd/mm/yy"
+              ></IonInput>
+            </IonCard>
+            <IonCard className="form-grp">
+              <IonLabel color="primary" className="input-label">
+                Item Description*
+              </IonLabel>
+              <IonTextarea
+                // type="text"
+                placeholder="Select new item status"
+                className="input-field"
+                // multiple
+                required
+              ></IonTextarea>
+            </IonCard>
+            <IonCard className="form-grp">
+              <IonLabel color="primary" className="input-label">
+                Estimated Salvage Value
+              </IonLabel>
+              <IonInput
+                type="text"
+                placeholder="Estimated Salvage Value"
+                className="input-field"
+              ></IonInput>
+            </IonCard>
+            <IonCard className="form-grp">
+              <IonLabel color="primary" className="input-label">
+                Upload Item Pictures
+              </IonLabel>
+              <IonTextarea
+                // type="text"
+                placeholder="Item Pictures"
+                className="input-field"
+                // multiple
+              >
+                {/* <IonIcon
+                  icon={cloudUploadOutline}
+                  color="primary-alt"
+                /> */}
+              </IonTextarea>
+            </IonCard>
+          </IonCard>
+          <IonCard className="btn-grp">
+            <IonButton
+              color="danger"
+              fill="outline"
+              className="form-btn"
+              onClick={() => setModal(false)}
+            >
+              <IonText color="danger">Cancel</IonText>
+            </IonButton>
+            <IonButton color="primary" className="form-btn">
+              <IonIcon icon={addOutline} color="light" />
+              <IonText color="light">Add Item</IonText>
+            </IonButton>
+          </IonCard>
+        </IonCard>
+      </IonModal>
     </>
   );
 };
