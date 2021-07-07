@@ -288,10 +288,6 @@
   margin-bottom: 1.5rem;
 }
 
-.task-update-form-contain .form-contain .form-grp:nth-child(3) .input-field {
-  /* --padding-bottom: 3rem; */
-}
-
 .task-update-form-contain .form-contain .form-grp:last-child .input-field {
   display: flex;
   justify-content: space-between;

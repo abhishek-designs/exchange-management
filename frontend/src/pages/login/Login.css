@@ -67,18 +67,8 @@
   margin-bottom: 2rem;
 }
 
-.login-form-contain .form-grp:nth-child(2) .input-field {
-  /* font-weight: bolder; */
-  /* text-align: right; */
-}
-
 .login-form-contain .form-grp:nth-child(2) .pwd-field {
   display: flex;
-}
-
-.login-form-contain .form-grp:nth-child(2) .input-field .show-pwd-btn {
-  /* display: flex; */
-  /* justify-self: flex-end; */
 }
 
 .login-form-contain .btn-grp {

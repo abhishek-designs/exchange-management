@@ -135,3 +135,8 @@
   font-weight: 700;
   padding-bottom: 0.6rem;
 }
+
+.approval-table .table-data .row-2 {
+  display: flex;
+  align-items: center;
+}

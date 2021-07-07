@@ -422,7 +422,8 @@ const Items = () => {
               <IonLabel color="primary" className="input-label">
                 Upload Item Pictures
               </IonLabel>
-              <IonTextarea
+              <IonInput
+                accept="file"
                 // type="text"
                 placeholder="Item Pictures"
                 className="input-field"
@@ -432,7 +433,7 @@ const Items = () => {
                   icon={cloudUploadOutline}
                   color="primary-alt"
                 /> */}
-              </IonTextarea>
+              </IonInput>
             </IonCard>
           </IonCard>
           <IonCard className="btn-grp">
