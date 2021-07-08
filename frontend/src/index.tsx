@@ -7,12 +7,11 @@ import {
   ApolloClient,
   createHttpLink,
   InMemoryCache,
-  gql,
 } from "@apollo/client";
 
 // Creating link for graphql
 const httpLink = createHttpLink({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  uri: "http://localhost:4000",
 });
 
 // Creating an instance of apollo client
@@ -21,19 +20,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   connectToDevTools: process.env.NODE_ENV === "development",
 });
-
-// client
-//   .query({
-//     query: gql`
-//       query GetRates {
-//         rates(currency: "USD") {
-//           currency
-//         }
-//       }
-//     `,
-//   })
-//   .then(res => console.log(res))
-//   .catch(err => console.log(err));
 
 ReactDOM.render(
   <ApolloProvider client={client}>

@@ -1,0 +1,27 @@
+{
+  "name": "exchange-management",
+  "version": "1.0.0",
+  "description": "Mock server for exchange-management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishek-designs/exchange-management.git"
+  },
+  "author": "Abhishek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhishek-designs/exchange-management/issues"
+  },
+  "homepage": "https://github.com/abhishek-designs/exchange-management#readme",
+  "dependencies": {
+    "apollo-server": "^2.25.2",
+    "graphql": "^15.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}

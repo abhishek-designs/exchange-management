@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet, IonPage } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Provider } from "react-redux";
+import { useQuery, useMutation, gql } from "@apollo/client";
 
 // Pages
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -50,6 +52,32 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 
 const App: React.FC = () => {
+  const QUERY = gql`
+    {
+      users {
+        id
+        name
+      }
+      user(id: "user-1") {
+        name
+      }
+    }
+  `;
+
+  const MUTATION = gql`
+    {
+      createUser(name: "Jane Doe") {
+        name
+      }
+    }
+  `;
+
+  const { data } = useQuery(QUERY);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <Provider store={store}>
       <IonApp>
