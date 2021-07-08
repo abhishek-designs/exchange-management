@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
@@ -23,18 +22,18 @@ const client = new ApolloClient({
   connectToDevTools: process.env.NODE_ENV === "development",
 });
 
-client
-  .query({
-    query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `,
-  })
-  .then(res => console.log(res))
-  .catch(err => console.log(err));
+// client
+//   .query({
+//     query: gql`
+//       query GetRates {
+//         rates(currency: "USD") {
+//           currency
+//         }
+//       }
+//     `,
+//   })
+//   .then(res => console.log(res))
+//   .catch(err => console.log(err));
 
 ReactDOM.render(
   <ApolloProvider client={client}>

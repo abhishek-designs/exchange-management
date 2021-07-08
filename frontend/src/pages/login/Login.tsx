@@ -47,10 +47,6 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(login);
-  }, [login]);
-
   return (
     <IonCard className="login-contain primary">
       {/* Login form */}
